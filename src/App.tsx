@@ -6,13 +6,9 @@ import CVitae from "./CVitae";
 
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route index path="/" element={<Home/>}></Route>
-                <Route index path="/contact" element={<Contact/>}></Route>
-                <Route index path="/curriculum-vitae" element={<CVitae/>}></Route>
-            </Routes>
-        </BrowserRouter>
+        <Fragment>
+            <Home/>
+        </Fragment>
     )
 }
 
