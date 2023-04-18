@@ -33,8 +33,9 @@ function Home() {
             console.log("found")
 
             linkElements[i].animate([
-                { transform: "translateX(-50svw)", opacity: 0 },
-                { transform: "translateX(0)", opacity: 1 }
+                { offset: 0, transform: "translateX(-50svw)", opacity: 0, pointerEvents:"none" },
+                { offset: .99, transform: "translateX(0)", opacity: 1, pointerEvents:"none" },
+                { offset: 1, transform: "translateX(0)", opacity: 1, pointerEvents:"auto" }
             ], {
                 duration: 300,
                 iterations: 1,
@@ -46,6 +47,14 @@ function Home() {
 
             console.log(linkElements[i].getAnimations())
         }
+    }
+
+    function createLinkLabel(url:string, label:string) {
+        return (
+            <a href={url}>
+                <label>{label}</label>
+            </a>
+        )
     }
 
     useEffect(() =>{
@@ -111,26 +120,32 @@ function Home() {
                             <ul>
                                 <div className={'hero-link-wrapper'}>
                                     <li className={'hero-link'}>
-                                        About
+                                        {createLinkLabel("./", "About")}
                                     </li>
                                     <div id={'hero-link-square-wrapper'}>
                                         <div id={'hero-link-square'}></div>
                                     </div>
                                 </div>
                                 <div className={'hero-link-wrapper'}>
-                                    <li className={'hero-link'}>Projects</li>
+                                    <li className={'hero-link'}>
+                                        {createLinkLabel("./", "Projects")}
+                                    </li>
                                     <div id={'hero-link-square-wrapper'}>
                                         <div id={'hero-link-square'}></div>
                                     </div>
                                 </div>
                                 <div className={'hero-link-wrapper'}>
-                                    <li className={'hero-link'}>Curriculum Vitae</li>
+                                    <li className={'hero-link'}>
+                                        {createLinkLabel("./", "Curriculum Vitae")}
+                                    </li>
                                     <div id={'hero-link-square-wrapper'}>
                                         <div id={'hero-link-square'}></div>
                                     </div>
                                 </div>
                                 <div className={'hero-link-wrapper'}>
-                                    <li className={'hero-link'}>Contact</li>
+                                    <li className={'hero-link'}>
+                                        {createLinkLabel("./", "Contact")}
+                                    </li>
                                     <div id={'hero-link-square-wrapper'}>
                                         <div id={'hero-link-square'}></div>
                                     </div>

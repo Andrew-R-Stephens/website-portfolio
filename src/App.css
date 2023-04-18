@@ -1,11 +1,14 @@
+/*
 :root {
     all:unset;
     height: 100dvh;
 }
-
+*/
+/*e
 html {
     height: 100dvh;
 }
+*/
 
 body {
     all: unset;
@@ -38,6 +41,8 @@ li {
 
 .hero-link {
     position: relative;
+    transform: translateX(-50svw);
+    pointer-events: none;
     opacity: 0;
 }
 
@@ -162,7 +167,7 @@ input[type=button] {
 
 .input-button {
     transition: color 200ms ease-in-out, background-color 200ms ease-in-out, transform 200ms ease-in-out;
-    color: rgba(255, 255, 255);
+    color: color(srgb 255 255 255);
     background-color: rgba(2, 0, 26, 0.75);
     transform: scale(100%);
 }
@@ -174,6 +179,9 @@ input[type=button] {
     transform: scale(110%);
 }
 
+.hero-link a {
+    all:unset;
+}
 
 .label-container {
     padding: 4px;
