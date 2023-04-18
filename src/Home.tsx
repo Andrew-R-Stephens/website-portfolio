@@ -19,14 +19,33 @@ function Home() {
         setIsEntered(true);
     }
 
-
-
     function goToGreetingAnchor() {
         const greetingAnchor = document.getElementById('greeting-anchor')
         greetingAnchor?.scrollIntoView({
             behavior: 'smooth',
             block: "start"
         });
+    }
+
+    function animateEnterHeroLinks() {
+        const linkElements = document.getElementsByClassName('hero-link');
+        for (var i = 0; i < linkElements.length; i++) {
+            console.log("found")
+
+            linkElements[i].animate([
+                { transform: "translateX(-50svw)", opacity: 0 },
+                { transform: "translateX(0)", opacity: 1 }
+            ], {
+                duration: 300,
+                iterations: 1,
+                direction: "normal",
+                easing: "ease-out",
+                delay: 1500 + (200 * i),
+                fill: "forwards"
+            });
+
+            console.log(linkElements[i].getAnimations())
+        }
     }
 
     useEffect(() =>{
@@ -36,6 +55,8 @@ function Home() {
         }
         window.addEventListener('resize', documentHeight)
         documentHeight()
+
+        animateEnterHeroLinks()
 
         const squareFall = document.getElementsByClassName('square-fall-1').item(0)
         squareFall?.addEventListener("animationend", (event) => {
@@ -120,8 +141,8 @@ function Home() {
                     <div className={'header-label'}>
                         <div className={'label-container transition-fade-in'}
                              style={{animationDuration: "1s", animationDelay: "200ms", paddingBottom:32}}>
-                            <label className={'simple-label'} style={{fontFamily:"TTSSevers-Medium"}}>Hello, my name is </label>
-                            <label className={'simple-label'} style={{fontFamily:"Oldtimer", color: "blueviolet"}}>Andrew Stephens</label>
+                            <label className={'simple-label hero-label-intro'}>Hello, my name is </label>
+                            <label className={'simple-label hero-label-name'}>Andrew Stephens</label>
                         </div>
                     </div>
                     <div className={'header-label'}>
@@ -151,6 +172,14 @@ function Home() {
             <div className={'page-body'} style={{background: "snow"}}>
                 <div id={'greeting-anchor'} className={'greeting'}>
                     <label>Hello from label</label>
+                    <div className="parent">
+                        <div className="my-element-to-clip"></div>
+                    </div>
+                    <svg width="0" height="0">
+                        <defs>
+                            <clipPath id="myCurve" clipPathUnits="objectBoundingBox"/>
+                        </defs>
+                    </svg>
                 </div>
                 <div className={''}></div>
             </div>

@@ -36,6 +36,11 @@ li {
     user-select: none;
 }
 
+.hero-link {
+    position: relative;
+    opacity: 0;
+}
+
 li.hero-link:hover {
     color: #a25ae5;
 }
@@ -56,10 +61,10 @@ li.hero-link:hover {
     position: relative;
     border: 1px solid white;
     margin: auto;
-    width: 10px;
+    width: .8vmin;
     aspect-ratio: 1;
     opacity: 0;
-    transform: translateY(50px) rotate(-360deg);
+    transform: translateY(calc(3vmin)) rotate(-360deg);
     transition: opacity 250ms, transform 500ms ease-in;
 }
 
@@ -67,11 +72,20 @@ li.hero-link:hover ~ #hero-link-square-wrapper #hero-link-square {
     position: relative;
     border: 1px solid white;
     margin: auto;
-    width: 10px;
+    width: .8vmin;
     aspect-ratio: 1;
     opacity: 1;
     transform: translateY(0px) rotate(90deg);
     transition: opacity 250ms, transform 500ms ease-out;
+}
+
+.hero-label-intro {
+    font-family: TTSSevers-Medium, serif, serif;
+}
+
+.hero-label-name {
+    font-family: Oldtimer, serif;
+    color: blueviolet !important;
 }
 
 input[type=button] {
@@ -103,9 +117,9 @@ input[type=button] {
     display: inline-block;
     position: absolute;
     width: 100%;
-    height: 10vh;
+    height: 12vh;
     bottom: 0;
-    box-shadow: inset 0 -10vh 10vh -10vh rgb(40, 52, 98);
+    box-shadow: inset 0 -10vh 10vh -10vh rgb(65, 85, 161);
 }
 
 .page-body {
@@ -179,8 +193,6 @@ input[type=button] {
 .reduced-font {
     font-size: clamp(12px, 1.5svw, 24px);
 }
-
-
 
 .square-wrapper {
     position:absolute;
@@ -555,6 +567,14 @@ body {
 */
 
 /* This is just to transition when you change the viewport size. */
+/*
 * {
     transition: all 0.25s ease-out;
+}
+*/
+
+.parent {
+}
+.my-element-to-clip {
+
 }
