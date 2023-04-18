@@ -1,20 +1,19 @@
+:root {
+    all:unset;
+    height: 100dvh;
+}
 
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+html {
+    height: 100dvh;
+}
 
 body {
     all: unset;
+    padding: 0;
+    margin: 0;
+    /*height: 100svh;*/ /* fallback for Js load */
     scroll-behavior: smooth;
+    height: 100dvh;
 }
 
 * {
@@ -26,20 +25,53 @@ ul {
     padding: 0;
     margin: 0;
 }
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    ul {
-        display: inline-block;
-    }
-}
 
 li {
     list-style-type: none;
-    padding: 8px;
+    padding: 0 16px;
     margin-left: 0;
     margin-right: auto;
     color: white;
-    font-size: clamp(12px, 1svmin, 48px);
+    font-size: clamp(12px, 1.2svmin, 48px);
+    user-select: none;
+}
+
+li.hero-link:hover {
+    color: #a25ae5;
+}
+
+.hero-link-wrapper {
+    display:block;
+    color: white;
+}
+
+#hero-link-square-wrapper {
+    width: 100%;
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#hero-link-square {
+    position: relative;
+    border: 1px solid white;
+    margin: auto;
+    width: 10px;
+    aspect-ratio: 1;
+    opacity: 0;
+    transform: translateY(50px) rotate(-360deg);
+    transition: opacity 250ms, transform 500ms ease-in;
+}
+
+li.hero-link:hover ~ #hero-link-square-wrapper #hero-link-square {
+    position: relative;
+    border: 1px solid white;
+    margin: auto;
+    width: 10px;
+    aspect-ratio: 1;
+    opacity: 1;
+    transform: translateY(0px) rotate(90deg);
+    transition: opacity 250ms, transform 500ms ease-out;
 }
 
 input[type=button] {
@@ -60,9 +92,20 @@ input[type=button] {
     display: flex;
     margin: auto;
     width: 100%;
-    height: 100vh;
+    height: 100svh;
     background: rgb(4,3,27);
-    background: linear-gradient(45deg, rgb(1, 1, 5) 0%, rgb(2, 0, 26) 100%);
+    background: linear-gradient(45deg, rgb(1, 1, 5) 0%, rgb(4, 0, 54) 100%);
+}
+
+.page-body::after {
+    content: "";
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 10vh;
+    bottom: 0;
+    box-shadow: inset 0 -10vh 10vh -10vh rgb(40, 52, 98);
 }
 
 .page-body {
@@ -76,15 +119,6 @@ input[type=button] {
     display: inline-block;
     margin: auto;
     padding: 1vmin;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 100%;
-    }
 }
 
 .header-container {
@@ -132,13 +166,9 @@ input[type=button] {
     text-align: center;
 }
 
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 100%;
-    }
+.transition-fade-in {
+    opacity: 0;
+    animation: fade-in 400ms forwards
 }
 
 .simple-label {
@@ -150,45 +180,7 @@ input[type=button] {
     font-size: clamp(12px, 1.5svw, 24px);
 }
 
-@font-face {
-    font-family: "Esprit";
-    src: local("Esprit"),
-    url("./assets/fonts/Esprit/Esprit.ttf") format("truetype");
-    font-weight: normal;
-    font-display: swap;
-}
 
-@font-face {
-    font-family: "Oldtimer";
-    src: local("Oldtimer"),
-    url("./assets/fonts/Oldtimer/Oldtimer.ttf") format("truetype");
-    font-weight: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "TTSSevers-Regular";
-    src: local("TTSevers"),
-    url("./assets/fonts/TT Severs/TT-Severs-Regular.otf") format("opentype");
-    font-weight: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "TTSSevers-Bold";
-    src: local("TTSevers"),
-    url("./assets/fonts/TT Severs/TT-Severs-Bold.otf") format("opentype");
-    font-weight: bold;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "TTSSevers-Medium";
-    src: local("TTSevers"),
-    url("./assets/fonts/TT Severs/TT-Severs-Medium.otf") format("opentype");
-    font-weight: bold;
-    font-display: swap;
-}
 
 .square-wrapper {
     position:absolute;
@@ -224,19 +216,6 @@ input[type=button] {
     animation-duration: 2s;
 }
 
-@keyframes square-gravity {
-    0% {
-        animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1)
-    }
-    25% {
-        transform: translate(0, -5svh);
-        animation-timing-function: cubic-bezier(0.33333, 0, 0.66667, 0.33333);
-    }
-    100% {
-        transform: translate(0, 200svh);
-    }
-}
-
 #square-1 {
     width: 60vmin;
     aspect-ratio: 1;
@@ -254,6 +233,7 @@ input[type=button] {
     width: 80vmin;
     aspect-ratio: 1;
     border: 4px solid rgba(83, 79, 129, 0.40);
+    background: rgba(83, 79, 129, 0.1);
 
     rotate: 87deg;
 
@@ -273,6 +253,7 @@ input[type=button] {
             inset 0 0 2vmin 2vmin rgba(33, 29, 93, 0.40),
             0 0 2vmin 2vmin rgba(33, 29, 93, 0.40);*/
     border: 6px solid rgba(62, 29, 93, 0.4);
+    background: rgba(62, 29, 93, 0.1);
     box-shadow:
             inset 0 0 2vmin 2vmin rgba(72, 29, 93, 0.4),
             0 0 2vmin 2vmin rgba(70, 29, 93, 0.4);
@@ -315,6 +296,106 @@ input[type=button] {
             shrink-grow-5 ease-in-out alternate infinite 25s;
 
     overflow: hidden;
+}
+
+#hexagon {
+    width: 100px;
+    height: 57.735px;
+    background: #211f1f;
+    position: relative;
+}
+#hexagon::before {
+    content: "";
+    position: absolute;
+    top: -28.8675px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 28.8675px solid red;
+}
+#hexagon::after {
+    content: "";
+    position: absolute;
+    bottom: -28.8675px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 28.8675px solid red;
+}
+
+#hero-bottom {
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    ul {
+        display: inline-block;
+    }
+    body{
+        height: 100%;
+    }
+    #hero-link {
+        height: 0;
+    }
+    #hero-link-square-wrapper {
+    }
+
+    #hero-link-square {
+        opacity: 0;
+    }
+
+    li.hero-link:hover ~ #hero-link-square-wrapper #hero-link-square {
+        opacity: 0;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes square-gravity {
+    0% {
+        animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1)
+    }
+    25% {
+        transform: translate(0, -5svh);
+        animation-timing-function: cubic-bezier(0.33333, 0, 0.66667, 0.33333);
+    }
+    100% {
+        transform: translate(0, 200svh);
+    }
 }
 
 @keyframes spin-square {
@@ -379,31 +460,101 @@ input[type=button] {
     }
 }
 
-#hexagon {
-    width: 100px;
-    height: 57.735px;
-    background: #211f1f;
-    position: relative;
+@font-face {
+    font-family: "Esprit";
+    src: local("Esprit"),
+    url("./assets/fonts/Esprit/Esprit.ttf") format("truetype");
+    font-weight: normal;
+    font-display: swap;
 }
-#hexagon::before {
-    content: "";
-    position: absolute;
-    top: -28.8675px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 28.8675px solid red;
+
+@font-face {
+    font-family: "Oldtimer";
+    src: local("Oldtimer"),
+    url("./assets/fonts/Oldtimer/Oldtimer.ttf") format("truetype");
+    font-weight: normal;
+    font-display: swap;
 }
-#hexagon::after {
-    content: "";
+
+@font-face {
+    font-family: "TTSSevers-Regular";
+    src: local("TTSevers"),
+    url("./assets/fonts/TT Severs/TT-Severs-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TTSSevers-Bold";
+    src: local("TTSevers"),
+    url("./assets/fonts/TT Severs/TT-Severs-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TTSSevers-Medium";
+    src: local("TTSevers"),
+    url("./assets/fonts/TT Severs/TT-Severs-Medium.otf") format("opentype");
+    font-weight: bold;
+    font-display: swap;
+}
+
+/**/
+@keyframes rotBG {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.gradient-wrapper {
     position: absolute;
-    bottom: -28.8675px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.gradient {
+    position: absolute;
+    top: calc(100svh + 250px);
+    bottom: 0;
     left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 28.8675px solid red;
+    right: 0;
+    display: flex;
+    margin: auto;
+
+    --speed: 50s;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+
+    width: 100%;
+    height: 100%;
+    filter: blur(calc(var(--size) / 5));
+    background-image: linear-gradient(hsl(158, 82%, 57%, 85%), hsl(252, 82%, 57%, 100%));
+    animation: rotBG var(--speed) var(--easing) alternate infinite;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+@media (min-width: 720px) {
+    .gradient {
+        --size: 500px;
+    }
+}
+/*
+
+body {
+    background-color: #222;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+*/
+
+/* This is just to transition when you change the viewport size. */
+* {
+    transition: all 0.25s ease-out;
 }
