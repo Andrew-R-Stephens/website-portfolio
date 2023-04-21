@@ -1,32 +1,19 @@
 import React, {Fragment} from "react";
 import {useNavigate} from "react-router-dom";
 
-function Home() {
-
-    const navigate = useNavigate()
+function CVitae() {
 
     return (
         <Fragment>
-            <div className={'page-main'}>
-                <div className={'page-top'}>
-                    <div className={'page-header'}>
-                        <label>Contact Me</label>
-                    </div>
-                    <div className={'page-navigation'}>
-                        <ul>
-                            <li onClick={() => navigate("/contact")}>Contact Me</li>
-                        </ul>
-                    </div>
+            <div className={'page-body'}>
+                <div className={'greeting'}>
+                    <div id={'CVitae-anchor'}/>
+                    <div style={{padding: '3svw'}}>Hello!</div>
                 </div>
-                <div className={'page-body'}>
-                    <div className={'greeting'}>
-
-                    </div>
-                    <div className={''}></div>
-                </div>
+                <div className={''}></div>
             </div>
         </Fragment>
     )
 }
 
-export default Home;
+export default CVitae;

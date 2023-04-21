@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import './App.css'
 import {render} from "react-dom";
 
-function Home() {
+function Hero() {
 
     //const navigate = useNavigate()
 
@@ -20,40 +20,46 @@ function Home() {
     }
 
     function goToGreetingAnchor() {
-        const greetingAnchor = document.getElementById('greeting-anchor')
+        const greetingAnchor = document.getElementById('about-anchor')
         greetingAnchor?.scrollIntoView({
-            behavior: 'smooth',
+            behavior: "smooth",
             block: "start"
         });
     }
 
     function animateEnterHeroLinks() {
         const linkElements = document.getElementsByClassName('hero-link');
-        for (var i = 0; i < linkElements.length; i++) {
-            console.log("found")
 
-            linkElements[i].animate([
-                { offset: 0, transform: "translateX(-50svw)", opacity: 0, pointerEvents:"none" },
-                { offset: .99, transform: "translateX(0)", opacity: 1, pointerEvents:"none" },
-                { offset: 1, transform: "translateX(0)", opacity: 1, pointerEvents:"auto" }
-            ], {
-                duration: 300,
-                iterations: 1,
-                direction: "normal",
-                easing: "ease-out",
-                delay: 1500 + (200 * i),
-                fill: "forwards"
-            });
-
-            console.log(linkElements[i].getAnimations())
-        }
+        const element = document.getElementById('label-container-last');
+        (element as Element).addEventListener("animationend", (event) => {
+            for (let i = 0; i < linkElements.length; i++) {
+                linkElements[i].animate([
+                    { offset: 0, transform: "translateX(-50svw)", opacity: 0, pointerEvents:"none" },
+                    { offset: .99, transform: "translateX(0)", opacity: 1, pointerEvents:"none" },
+                    { offset: 1, transform: "translateX(0)", opacity: 1, pointerEvents:"auto" }
+                ], {
+                    duration: 300,
+                    iterations: 1,
+                    direction: "normal",
+                    easing: "ease-out",
+                    delay: 500 + (-200 * i),
+                    fill: "forwards"
+                });
+            }
+        });
     }
 
-    function createLinkLabel(url:string, label:string) {
+    function createLinkLabel(url: string, label: string) {
         return (
-            <a href={url}>
-                <label>{label}</label>
-            </a>
+            <Fragment>
+                <a href={url}>
+                    <label>{label}</label>
+                </a>
+                <div id={'hero-link-square-wrapper'}>
+                    <div id={'hero-link-square-underline'}/>
+                    <div id={'hero-link-square'}/>
+                </div>
+            </Fragment>
         )
     }
 
@@ -77,13 +83,15 @@ function Home() {
     return (
         <Fragment>
             <div className={'page-head'}>
-                <div style={{position: "absolute", top:0, width:"100%", height: "100svh", zIndex: 0, overflow: "hidden"}}>
+                <div style={{position: "absolute", top:0, width:"100%", height: "100svh",
+                    zIndex: 0, overflow: "hidden"}}>
                     {/*
                     <canvas id={'head-canvas'} width={"100%"} height={"100%"}
                             style={{display: "block", margin:"auto", width:"100%", height:"100%"}}/>
                     */}
                     <div id={'square-fall'} className={'square-wrapper square-fall-1'}
                          role={isEntered? 'active-square-fall' : ''}>
+
                         <div className={'square-wrapper'}
                              id={'square-3'}/>
                     </div>
@@ -117,55 +125,44 @@ function Home() {
                 <div className={'head-header'}>
                     <div className={'header-links'}>
                         <div style={{marginLeft:"3vmin", marginTop: 32}}>
-                            <ul>
+                            <ul className={'hero-link-wrapper-parent'}>
                                 <div className={'hero-link-wrapper'}>
                                     <li className={'hero-link'}>
                                         {createLinkLabel("./", "About")}
                                     </li>
-                                    <div id={'hero-link-square-wrapper'}>
-                                        <div id={'hero-link-square'}></div>
-                                    </div>
                                 </div>
                                 <div className={'hero-link-wrapper'}>
                                     <li className={'hero-link'}>
                                         {createLinkLabel("./", "Projects")}
                                     </li>
-                                    <div id={'hero-link-square-wrapper'}>
-                                        <div id={'hero-link-square'}></div>
-                                    </div>
                                 </div>
                                 <div className={'hero-link-wrapper'}>
                                     <li className={'hero-link'}>
                                         {createLinkLabel("./", "Curriculum Vitae")}
                                     </li>
-                                    <div id={'hero-link-square-wrapper'}>
-                                        <div id={'hero-link-square'}></div>
-                                    </div>
                                 </div>
                                 <div className={'hero-link-wrapper'}>
                                     <li className={'hero-link'}>
                                         {createLinkLabel("./", "Contact")}
                                     </li>
-                                    <div id={'hero-link-square-wrapper'}>
-                                        <div id={'hero-link-square'}></div>
-                                    </div>
                                 </div>
                             </ul>
                         </div>
                     </div>
-                    <div className={'header-label'}>
-                        <div className={'label-container transition-fade-in'}
-                             style={{animationDuration: "1s", animationDelay: "200ms", paddingBottom:32}}>
-                            <label className={'simple-label hero-label-intro'}>Hello, my name is </label>
-                            <label className={'simple-label hero-label-name'}>Andrew Stephens</label>
+                    <div className={'hero-label'}>
+                        <div className={'label-container hero-label-wrapper'}
+                             style={{paddingBottom:32}}>
+                            <div><label className={'simple-label hero-label-intro'}>Hello, my name is&nbsp;</label></div>
+                            <div><label className={'simple-label hero-label-name'}>Andrew Stephens</label></div>
                         </div>
                     </div>
-                    <div className={'header-label'}>
+                    <div className={'hero-label'}>
                         <div className={'label-container transition-fade-in'}
                              style={{animationDelay: "1s"}}>
                             <label className={'simple-label reduced-font'}>Full-stack Developer</label>
                         </div>
-                        <div className={'label-container transition-fade-in'}
+                        <div id={'label-container-last'}
+                             className={'label-container transition-fade-in'}
                              style={{animationDelay: "1300ms"}}>
                             <label className={'simple-label reduced-font'}>Native Android Engineer</label>
                         </div>
@@ -184,22 +181,8 @@ function Home() {
                     </ul>
                 </div>*/}
             </div>
-            <div className={'page-body'} style={{background: "snow"}}>
-                <div id={'greeting-anchor'} className={'greeting'}>
-                    <label>Hello from label</label>
-                    <div className="parent">
-                        <div className="my-element-to-clip"></div>
-                    </div>
-                    <svg width="0" height="0">
-                        <defs>
-                            <clipPath id="myCurve" clipPathUnits="objectBoundingBox"/>
-                        </defs>
-                    </svg>
-                </div>
-                <div className={''}></div>
-            </div>
         </Fragment>
     )
 }
 
-export default Home;
+export default Hero;

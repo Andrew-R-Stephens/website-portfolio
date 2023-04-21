@@ -16,7 +16,7 @@ body {
     margin: 0;
     /*height: 100svh;*/ /* fallback for Js load */
     scroll-behavior: smooth;
-    height: 100dvh;
+    height: calc(100dvh);
 }
 
 * {
@@ -25,7 +25,7 @@ body {
 
 ul {
     display: inline-flex;
-    padding: 0;
+    padding: 2svh 0;
     margin: 0;
 }
 
@@ -35,8 +35,12 @@ li {
     margin-left: 0;
     margin-right: auto;
     color: white;
-    font-size: clamp(12px, 1.2svmin, 48px);
+    font-size: clamp(12px, 1.4svmin, 48px);
     user-select: none;
+}
+
+.hero-link-wrapper-parent {
+    margin: auto;
 }
 
 .hero-link {
@@ -47,7 +51,7 @@ li {
 }
 
 li.hero-link:hover {
-    color: #a25ae5;
+    /*color: #a25ae5;*/
 }
 
 .hero-link-wrapper {
@@ -57,9 +61,18 @@ li.hero-link:hover {
 
 #hero-link-square-wrapper {
     width: 100%;
-    display: inline-flex;
+    display: inline;
     margin-left: auto;
     margin-right: auto;
+}
+
+#hero-link-square-underline {
+    position: relative;
+    margin: auto;
+    border-top: 1px solid white;
+    width: 0;
+    padding-bottom: 4px;
+    transition: width 250ms;
 }
 
 #hero-link-square {
@@ -70,10 +83,10 @@ li.hero-link:hover {
     aspect-ratio: 1;
     opacity: 0;
     transform: translateY(calc(3vmin)) rotate(-360deg);
-    transition: opacity 250ms, transform 500ms ease-in;
+    transition: opacity 250ms, transform 250ms ease-in;
 }
 
-li.hero-link:hover ~ #hero-link-square-wrapper #hero-link-square {
+li.hero-link:hover #hero-link-square-wrapper #hero-link-square {
     position: relative;
     border: 1px solid white;
     margin: auto;
@@ -84,13 +97,31 @@ li.hero-link:hover ~ #hero-link-square-wrapper #hero-link-square {
     transition: opacity 250ms, transform 500ms ease-out;
 }
 
+li.hero-link:hover #hero-link-square-wrapper #hero-link-square-underline {
+    position: relative;
+    border-top: 1px solid white;
+    width: calc(75%);
+    opacity: 1;
+    transition: width 500ms 250ms, opacity 1000ms;
+}
+
+.hero-label-wrapper {
+    display: flex;
+}
+
 .hero-label-intro {
     font-family: TTSSevers-Medium, serif, serif;
+    animation: enter-intro ease-in forwards 1s;
+    animation-delay: 200ms;
+    opacity: 0;
 }
 
 .hero-label-name {
     font-family: Oldtimer, serif;
     color: blueviolet !important;
+    animation: enter-intro ease-in forwards 1s;
+    animation-delay: 200ms;
+    opacity: 0;
 }
 
 input[type=button] {
@@ -116,22 +147,69 @@ input[type=button] {
     background: linear-gradient(45deg, rgb(1, 1, 5) 0%, rgb(4, 0, 54) 100%);
 }
 
-.page-body::after {
-    content: "";
-    background-size: cover;
-    display: inline-block;
-    position: absolute;
-    width: 100%;
-    height: 12vh;
-    bottom: 0;
-    box-shadow: inset 0 -10vh 10vh -10vh rgb(65, 85, 161);
-}
-
 .page-body {
+    padding-top: 25svh;
+    background: snow;
     display: flex;
     margin: auto;
     width: 100%;
     min-height: 200svh;
+}
+
+.page-body::after {
+    content: url(#page-body-multisquares);
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 24vh;
+    bottom: -16vh;
+    /*
+    box-shadow: inset 0 10vh 10vh -10vh rgb(65, 85, 161);
+    */
+    background: rgb(4, 0, 54);
+    background: linear-gradient(180deg, rgba(4, 0, 54,0) 0%, rgb(4, 0, 54) 33%, rgba(4, 0, 54, 0) 100%);
+}
+
+#page-body-multisquares {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30vh;
+    bottom: -15vh;
+    z-index: 1;
+}
+
+.mini-square-wrapper {
+    display: block;
+    position: relative;
+    top: 66%;
+    bottom: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mini-square {
+    position: absolute;
+    width: 1vmin;
+    aspect-ratio: 1;
+    border: 1px white solid;
+    left: 50%;
+    right: 50%;
+    text-align: center;
+    opacity: 0;
+    overflow: hidden;
+
+    /*animation: mini-square-spin 3s linear normal;*/
+}
+
+@keyframes mini-square-spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-900deg);
+    }
 }
 
 .head-header {
@@ -154,7 +232,7 @@ input[type=button] {
     height: 1svh;
 }
 
-.header-label {
+.hero-label {
     display: inline;
     margin: auto;
     padding: 8px;
@@ -194,12 +272,12 @@ input[type=button] {
 }
 
 .simple-label {
-    font-size: clamp(24px, 3svw, 48px);
+    font-size: clamp(24px, 3svw, 72px);
     color: rgb(222, 220, 253);
 }
 
 .reduced-font {
-    font-size: clamp(12px, 1.5svw, 24px);
+    font-size: clamp(18px, 1.75svw, 36px);
 }
 
 .square-wrapper {
@@ -356,6 +434,9 @@ input[type=button] {
     ul {
         display: inline-block;
     }
+    li {
+        padding: clamp(4px, .75svw, 8px) 8px;
+    }
     body{
         height: 100%;
     }
@@ -363,13 +444,24 @@ input[type=button] {
         height: 0;
     }
     #hero-link-square-wrapper {
+        padding-bottom: clamp(8px, 2svh, 16px);
     }
 
     #hero-link-square {
         opacity: 0;
     }
 
-    li.hero-link:hover ~ #hero-link-square-wrapper #hero-link-square {
+    #hero-link-square-underline {
+        opacity: 0;
+    }
+    .hero-label-wrapper {
+        display: block;
+    }
+    li.hero-link:hover #hero-link-square-wrapper #hero-link-square-underline {
+        opacity: 0;
+    }
+
+    li.hero-link:hover #hero-link-square-wrapper #hero-link-square {
         opacity: 0;
     }
 }
@@ -387,12 +479,12 @@ input[type=button] {
 @media only screen and (min-width: 1200px) {}
 
 
-@keyframes fade-in {
-    from {
+@keyframes enter-intro {
+    0% {
         opacity: 0;
     }
-    to {
-        opacity: 100%;
+    100% {
+        opacity: 1;
     }
 }
 
