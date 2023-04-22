@@ -18,55 +18,56 @@ function About() {
         }
     }
 
-    function animateMiniSquare(element:Element):Element {
-        console.log("Sent over")
-
+    function animateMiniSquare(element:Element) {
         let transX = "calc(-50svw + (" + (Math.random()*90) +"svw))";
         let transY = Math.random();
 
-        Math.random() <= .5 ?
+        document.getElementById(element.id)?.getAnimations().forEach((item:Animation)=>item.cancel())
+
+       /* Math.random() <= .5 ?*/
             document.getElementById(element.id)?.animate([
-                { offset: 0, transform: "translate(" + transX + ", 0)", opacity: 0},
+                { offset: 0, transform: "translate(" + transX + ", 0) rotate(15deg)", opacity: 0},
                 { offset: .20, opacity: 0, width: "1svw" },
-                { offset: .25, opacity: 1, width: "1.25svw" },
-                { offset: .50, opacity: 1, width: "1.5svw" },
-                { offset: 1, transform: "translate(" + transX + ", calc(-5vh + (-10vh * " + transY + ")))", opacity: 0, width: "1svw"}
+                { offset: .25, opacity: .5, width: "1.25svw" },
+                { offset: .50, opacity: .8, width: "1.5svw" },
+                { offset: 1, transform: "translate(" + transX + ", calc(-10svh + (-50svh * " + transY + "))) rotate(90deg)", opacity: 0, width: "1svw"}
             ], {
-                duration: 2000 + (Math.random()*1000),
+                duration: 5000 + (Math.random()*1000),
                 iterations: 1,
                 direction: "normal",
                 easing: "ease-in-out",
-                delay: (Math.random()*1000),
+                delay: (Math.random()*6000),
                 fill: "forwards"
             })
-            :
+            /*:
             document.getElementById(element.id)?.animate([
                 { offset: 0, transform: "translate(" + transX + ", 0)", opacity: 0},
                 { offset: .20, opacity: 0, width: "1svw" },
-                { offset: .25, opacity: 1, width: "1.25svw" },
-                { offset: .50, opacity: 1, width: "1.5svw" },
-                { offset: 1, transform: "translate(" + transX +  ", calc(5vh + (10vh * " + transY + ")))", opacity: 0, width: "1svw"}
+                { offset: .25, opacity: .5, width: "1.25svw" },
+                { offset: .50, opacity: .8, width: "1.5svw" },
+                { offset: 1, transform: "translate(" + transX +  ", calc(5svh + (10svh * " + transY + ")))", opacity: 0, width: "1svw"}
             ], {
-                duration: 2000 + (Math.random()*1000),
+                duration: 5000 + (Math.random()*1000),
                 iterations: 1,
                 direction: "normal",
                 easing: "ease-in-out",
-                delay: (Math.random()*1000),
+                delay: 2000 + (Math.random()*1000),
                 fill: "forwards"
-            });
+            });*/
 
-        (document.getElementById(element.id) as Element).getAnimations().map((item)=>{
-            item.onfinish = (event) => {
+        element.getAnimations().map((item)=>{
+            const eventListener = (event:AnimationPlaybackEvent, item:Animation) =>
+            {
                 animateMiniSquare(element)
+                item.removeEventListener("finish", (event)=>eventListener(event, item))
             }
+            item.addEventListener("finish", (event)=>eventListener(event, item), {once:true})
         })
-
-        return element
     }
 
     return (
         <Fragment>
-            <div className={'page-body'}>
+            <div className={'page-body'} style={{zIndex:0}}>
                 <div id={'page-body-multisquares'}>
                     <div className={'mini-square-wrapper'}>
                         <div className={'mini-square'}/>
@@ -85,17 +86,13 @@ function About() {
                         <div className={'mini-square'}/>
                         <div className={'mini-square'}/>
                         <div className={'mini-square'}/>
-                        <div className={'mini-square'}/>
-                        <div className={'mini-square'}/>
-                        <div className={'mini-square'}/>
-                        <div className={'mini-square'}/>
                 </div>
                 </div>
-                <div className={'greeting'}>
-                    <div id={'about-anchor'}/>
-                    <div style={{padding: '3svw'}}>Hello!</div>
+                <div className={'greeting'} style={{zIndex:0}}>
+                    <div id={'about-anchor'} style={{zIndex:0}}/>
+                    <div style={{padding: '3svw', zIndex:0}}>Hello!</div>
                 </div>
-                <div className={''}></div>
+                <div className={''} style={{zIndex:0}}></div>
             </div>
         </Fragment>
     )

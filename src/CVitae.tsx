@@ -5,10 +5,11 @@ function CVitae() {
 
     return (
         <Fragment>
-            <div className={'page-body'}>
+            <div className={'page-body'} style={{background:"black"}}>
                 <div className={'greeting'}>
                     <div id={'CVitae-anchor'}/>
                     <div style={{padding: '3svw'}}>Hello!</div>
+
                 </div>
                 <div className={''}></div>
             </div>

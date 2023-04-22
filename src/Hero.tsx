@@ -2,6 +2,7 @@ import React, {Fragment, useEffect, useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import './App.css'
 import {render} from "react-dom";
+import {ReactComponent as SiteLogo} from './assets/vectors/AndrewStephensLogo.svg'
 
 function Hero() {
 
@@ -13,15 +14,15 @@ function Hero() {
         event.preventDefault()
 
         if(isEntered) {
-            goToGreetingAnchor();
+            goToAnchor('about-anchor');
         }
 
         setIsEntered(true);
     }
 
-    function goToGreetingAnchor() {
-        const greetingAnchor = document.getElementById('about-anchor')
-        greetingAnchor?.scrollIntoView({
+    function goToAnchor(anchorElementID:string) {
+        const anchor = document.getElementById(anchorElementID)
+        anchor?.scrollIntoView({
             behavior: "smooth",
             block: "start"
         });
@@ -52,7 +53,7 @@ function Hero() {
     function createLinkLabel(url: string, label: string) {
         return (
             <Fragment>
-                <a href={url}>
+                <a id={'hero-link-href'} href={url}>
                     <label>{label}</label>
                 </a>
                 <div id={'hero-link-square-wrapper'}>
@@ -75,7 +76,7 @@ function Hero() {
 
         const squareFall = document.getElementsByClassName('square-fall-1').item(0)
         squareFall?.addEventListener("animationend", (event) => {
-            goToGreetingAnchor();
+            goToAnchor('about-anchor');
         });
 
     }, [])
@@ -100,11 +101,11 @@ function Hero() {
                         <div className={'square-wrapper'}
                              id={'square-5'}/>
                     </div>
-                    <div id={'square-fall'} className={'square-wrapper square-fall-3'}
+                    {/*<div id={'square-fall'} className={'square-wrapper square-fall-3'}
                          role={isEntered? 'active-square-fall' : ''}>
                         <div className={'square-wrapper'}
                              id={'square-2'}/>
-                    </div>
+                    </div>*/}
                     <div id={'square-fall'} className={'square-wrapper square-fall-4'}
                          role={isEntered? 'active-square-fall' : ''}>
                         <div className={'square-wrapper'}
@@ -124,8 +125,11 @@ function Hero() {
                 </div>
                 <div className={'head-header'}>
                     <div className={'header-links'}>
-                        <div style={{marginLeft:"3vmin", marginTop: 32}}>
+                        <div style={{marginLeft:"3vmin", marginTop: 32, marginRight: "3vmin"}}>
                             <ul className={'hero-link-wrapper-parent'}>
+                                <div className={'site-logo-wrapper'}>
+                                    <SiteLogo className={'site-logo'}/>
+                                </div>
                                 <div className={'hero-link-wrapper'}>
                                     <li className={'hero-link'}>
                                         {createLinkLabel("./", "About")}
@@ -159,12 +163,13 @@ function Hero() {
                     <div className={'hero-label'}>
                         <div className={'label-container transition-fade-in'}
                              style={{animationDelay: "1s"}}>
-                            <label className={'simple-label reduced-font'}>Full-stack Developer</label>
+                            <label id={'label-description'}  className={'simple-label reduced-font'}>Full-stack Developer</label>
                         </div>
                         <div id={'label-container-last'}
                              className={'label-container transition-fade-in'}
                              style={{animationDelay: "1300ms"}}>
-                            <label className={'simple-label reduced-font'}>Native Android Engineer</label>
+                            <label id={'label-description'} className={'simple-label reduced-font'}>Native Android Engineer
+                            </label>
                         </div>
                     </div>
                     <div className={'header-input'}>
