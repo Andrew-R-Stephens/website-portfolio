@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from "./App";
-import './App.css'
 import './assets/fonts/Esprit/Esprit.ttf'
 import './assets/fonts/Oldtimer/Oldtimer.ttf'
 import './assets/fonts/TT Severs/TT-Severs-Regular.otf'
 import './assets/fonts/TT Severs/TT-Severs-Bold.otf'
 import './assets/fonts/TT Severs/TT-Severs-Medium.otf'
+import App2 from "./v2/App2";
 /*
 import './assets/fonts/Bizmo/Bizmo-Bold.ttf'
 import './assets/fonts/Clara/Clara.ttf'
@@ -36,5 +35,5 @@ import './assets/fonts/TT Severs/TT-Severs-Thin-Italic.otf'
 */
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-    <App/>
+    <App2/>
 )

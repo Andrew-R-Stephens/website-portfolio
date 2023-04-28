@@ -1,15 +1,13 @@
 import React, {Fragment} from "react";
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Hero from "./Hero";
-import Contact from "./Contact";
-import CVitae from "./CVitae";
-import './App.css'
-import About from "./About";
 import Body from "./Body";
+import Header from "./Header";
+import "./App.css";
 
 function App() {
     return (
         <Fragment>
+            <Header/>
             <Hero/>
             <Body/>
         </Fragment>
