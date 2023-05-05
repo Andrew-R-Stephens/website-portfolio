@@ -3,6 +3,7 @@ import CVitae from "./CVitae";
 import React, {Fragment, useEffect} from "react";
 import Projects from "./Projects";
 import Contact from "./Contact";
+import Footer from "./Footer";
 
 function Body() {
 
@@ -11,7 +12,7 @@ function Body() {
         console.log(heroLinkMasterHeight)
         const scrollElements = document.getElementsByClassName('scroll-anchor');
         for(let e of scrollElements) {
-            (e as any).style.scrollMarginTop = heroLinkMasterHeight + "px";
+            (e as any).style.scrollMarginTop = "calc(" + heroLinkMasterHeight + "px + 3svh)";
         }
     }, [])
 
@@ -40,12 +41,13 @@ function Body() {
     }
 
     return (
-        <Fragment>
+        <div className={'all-body'}>
             <About/>
             <Projects/>
-            <CVitae/>
+            {/*<CVitae/>*/}
             <Contact/>
-        </Fragment>
+            <Footer/>
+        </div>
     );
 }
 

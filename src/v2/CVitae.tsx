@@ -6,11 +6,15 @@ function CVitae() {
     return (
         <Fragment>
             <div className={'page-body'} style={{zIndex:0}}>
-                <div className={'greeting'} style={{zIndex:0}}>
-                    <div id={'cvitae-anchor'} className={'scroll-anchor'}/>
-                    <div style={{padding: '3svw', zIndex:0, color:"white"}}>Curriculum Vitae</div>
+                <div id={'cvitae-anchor'} className={'scroll-anchor'}/>
+                <div className={'about-body'}>
+                    <div className={'text-blurb-label'}>
+                        <label>Curriculum Vitae</label>
+                    </div>
+                    <div className={'text-blurb-body'}>
+                        <p>ToDo</p>
+                    </div>
                 </div>
-                <div className={''} style={{zIndex:0}}></div>
             </div>
         </Fragment>
     )
