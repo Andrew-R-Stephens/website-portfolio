@@ -1,5 +1,4 @@
 import React, {Fragment} from "react";
-import {useNavigate} from "react-router-dom";
 
 function Contact() {
 
@@ -11,9 +10,29 @@ function Contact() {
                 <div className={'page-body'} style={{zIndex:0}}>
                     <div id={'contact-anchor'} className={'scroll-anchor'}/>
                     <div className={'contact-body'}>
-                        <div style={{display:'flex'}}>
-                            <div className={'hero-label-name'} style={{animation:"none", opacity: 1, margin: "0 auto 32px auto", textAlign:"center"}}>Contact Me</div>
+                        <div className={'contact-body-top'}>
+                            <div className={'contact-body-top-label'}>
+                                <div className={'hero-label-name'} style={{animation:"none", opacity: 1, textAlign:"center", margin:'auto'}}>Contact Me</div>
+                            </div>
+                            <div className={'contact-socials-wrapper'}>
+                                <div className={'contact-logo-wrapper'}>
+                                    <a href={"https://github.com/Andrew-R-Stephens"} title={'github.com/Andrew-R-Stephens'}>
+                                        <div className={'contact-logo-github'} />
+                                    </a>
+                                </div>
+                                <div className={'contact-logo-wrapper'}>
+                                    <a href={"https://www.linkedin.com/in/andrew-stephens-/"} title={'linkedin.com/in/andrew-stephens-'}>
+                                        <div className={'contact-logo-linkedin'} />
+                                    </a>
+                                </div>
+                            </div>
+                            <div className={'contact-split-wrapper'}>
+                                <div className={'contact-split-line'} ><hr/></div>
+                                <div className={'contact-split-label'}><label>OR</label></div>
+                                <div className={'contact-split-line'} ><hr/></div>
+                            </div>
                         </div>
+
                         <fieldset>
                             <form className={'contact-form'} target="_blank"
                                   action={'https://formsubmit.co/16a4f900d28f4f8b26c6052334a2b22b'}

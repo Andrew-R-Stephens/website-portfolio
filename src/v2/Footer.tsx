@@ -29,15 +29,18 @@ function Footer() {
                         <div className={'footer-body-inner-wrapper'}>
                             <div className={'footer-content-wrapper'}>
                                 <div className={'footer-content-label-wrapper'}>
-                                    <a href={"https://github.com/Andrew-R-Stephens"}>
+                                    <a href={"https://github.com/Andrew-R-Stephens"}
+                                       title={'github.com/Andrew-R-Stephens'}>
                                         <label className={'footer-content-label'}>Github</label></a>
                                 </div>
                                 <div className={'footer-content-label-wrapper'}>
-                                    <a href={"https://www.linkedin.com/in/andrew-stephens-/"}>
+                                    <a href={"https://www.linkedin.com/in/andrew-stephens-/"}
+                                       title={'linkedin.com/in/andrew-stephens-'}>
                                         <label className={'footer-content-label'}>LinkedIn</label></a>
                                 </div>
                                 <div className={'footer-content-label-wrapper'}>
-                                    <a href={"https://tritium-studios.com/"}>
+                                    <a href={"https://tritium-studios.com/"}
+                                       title={'tritium-studios.com'}>
                                         <label className={'footer-content-label'}>Tritium Studios</label></a>
                                 </div>
                             </div>

@@ -7,8 +7,10 @@ function About() {
             <div className={'page-body'} style={{zIndex:0}}>
                 <div id={'about-anchor'} className={'scroll-anchor'}/>
                 <div className={'about-body'}>
-                    <div className={'text-blurb-label'}>
-                        <label>Who I am</label>
+                    <div className={'about-body-top'}>
+                        <div className={'about-body-top-label'}>
+                            ABOUT ME
+                        </div>
                     </div>
                     <div className={'text-blurb-body'}>
                         <p>

@@ -1,5 +1,6 @@
 import React, {Fragment} from "react";
 import {useNavigate} from "react-router-dom";
+import ProjectGallery from "./Projects/ProjectGallery";
 
 function Projects() {
 
@@ -8,10 +9,22 @@ function Projects() {
             <div className={'page-body'} style={{zIndex:0}}>
                 <div id={'projects-anchor'} className={'scroll-anchor'}/>
                 <div className={'projects-body'}>
-                    <div className={'text-blurb-label'}>
-                        <label>Past Projects</label>
+                    <div className={'projects-body-top'}>
+                        <div className={'projects-body-top-inner'}>
+                            <div className={'projects-body-top-label-wrapper'}>
+                                <div className={'projects-body-top-label'}>PROJECTS</div>
+                            </div>
+                            <div className={'projects-body-top-label-small'}>and</div>
+                            <div className={'projects-body-top-label-wrapper'}>
+                                <div className={'projects-body-top-label'}>PUBLICATIONS</div>
+                            </div>
+                        </div>
                     </div>
-                    <div className={'text-blurb-body'}>
+                    <div className={'projects-gallery'}>
+                        {/*<div style={{margin: "auto", color: "orange", padding: 'clamp(8px, 1svmin, 16px)', border: '1px solid orange', borderRadius: 'clamp(10px, .75svmin, 30px)', background: "rgba(252,230,182,0.09)"}}>Sorry, work in progress!</div>*/}
+                        <ProjectGallery></ProjectGallery>
+                    </div>
+                    {/*<div className={'text-blurb-body'}>
                         <ul>
                             <li>10+ years of experience in 𝐉𝐚𝐯𝐚, and deep understanding of OOP concepts</li>
                             <li>2+ years of experience in mobile 𝐀𝐧𝐝𝐫𝐨𝐢𝐝 app development</li>
@@ -26,20 +39,17 @@ function Projects() {
                             Chrome Extensions, Angular, Go, and Kotlin. I have also been in pursuit of a number of recognized
                                 relevant Certifications.</li>
                         </ul>
-                        <p>
-                            𝐏𝐮𝐛𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧𝐬:
-                            <ul>
-                                <li>𝘗𝘩𝘢𝘴𝘮𝘰𝘱𝘩𝘰𝘣𝘪𝘢 𝘌𝘷𝘪𝘥𝘦𝘯𝘤𝘦 𝘛𝘰𝘰𝘭 for Android on the Google Play Store</li>
-                            </ul>
-                            𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬:
-                            <ul>
-                                <li>Deployed a fully realized 2D platformer game</li>
-                                <li>"Pom20" Chrome Extension for time management</li>
-                                <li>Perlin Noise generator / visualizer website</li>
-                            </ul>
-
-                        </p>
-                    </div>
+                        𝐏𝐮𝐛𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧𝐬:
+                        <ul>
+                            <li>𝘗𝘩𝘢𝘴𝘮𝘰𝘱𝘩𝘰𝘣𝘪𝘢 𝘌𝘷𝘪𝘥𝘦𝘯𝘤𝘦 𝘛𝘰𝘰𝘭 for Android on the Google Play Store</li>
+                        </ul>
+                        𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬:
+                        <ul>
+                            <li>Deployed a fully realized 2D platformer game</li>
+                            <li>"Pom20" Chrome Extension for time management</li>
+                            <li>Perlin Noise generator / visualizer website</li>
+                        </ul>
+                    </div>*/}
                 </div>
             </div>
         </Fragment>
