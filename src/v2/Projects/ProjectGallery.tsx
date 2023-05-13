@@ -162,21 +162,21 @@ function BouyDisplay(data:any) {
                         </div>
                         <div className={'project-bouy-inner-wrapper-body'}>
                             <div className={'project-bouy-inner-wrapper-body-inner'}>
-                                <div className={'project-bouy-title'}>{project?.title}</div>
-                                <div className={'project-bouy-title-alt'}>{project?.altTitle}</div>
-                                <div className={'project-bouy-genre'}>{project?.genre}</div>
-                                {/*<div className={'project-bouy-description'}>{project?.details}</div>*/}
-                                <div className={'project-bouy-isPublication'}>{project?.isPublication}</div>
-                            </div>
-                            <div className={'project-bouy-inner-wrapper-links-wrapper'}>
-                                <div className={'project-bouy-githubUrl'}>
-                                    <a href={project?.githubUrl} target={'_blank'}>Source</a>
-                                </div>
-                                <div className={'project-bouy-demoUrl'}>
-                                    <a href={project?.demoUrl}  target={'_blank'}>Demo</a>
+                                <div className={'project-bouy-inner-wrapper-body-inner-item-wrapper'}>
+                                    <label className={'project-bouy-title'}>{project?.title}</label>
+                                        <label className={'project-bouy-title-alt'}>{project?.altTitle}</label>
+                                        <label className={'project-bouy-genre'}>{project?.genre}</label>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className={'project-bouy-inner-wrapper-links-wrapper'}>
+                        {project?.githubUrl!?.length > 0 ?<div className={'project-bouy-githubUrl'}>
+                            <a href={project?.githubUrl} target={'_blank'}>Source</a>
+                        </div>:<Fragment/>}
+                        {project?.demoUrl!?.length > 0 ?<div className={'project-bouy-demoUrl'}>
+                            <a href={project?.demoUrl} target={'_blank'}>Demo</a>
+                        </div>:<Fragment/>}
                     </div>
                 </div>
             </div>
