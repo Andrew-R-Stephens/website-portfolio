@@ -1,20 +1,13 @@
-import React, {Fragment, useEffect, useRef, useState} from "react";
-const rawProjectDataRes = (await fetch('src/assets/data/projects.json'));
+import React, {Fragment, useEffect, useState} from "react";
+import json from './../../assets/data/projects.json';
 
 function ProjectGallery() {
 
     const [rawData, setRawData] = useState<any>({});
     const [projects, setProjects] = useState<Project[]>([]);
     const [allTechnologies, setTechnologies] = useState<string[]>([]);
-    const [currentProject, setCurrentProject] = useState<number>(0);
     const [currentTechnology, setCurrentTechnology] = useState<string>("");
 
-    const handleNext = () => setCurrentProject((current) => {
-        return (current +1) > projects.length -1 ? 0 : current +1;
-    });
-    const handlePrevious = () => setCurrentProject((current) => {
-        return Math.max(0, (current -1) < 0 ? projects.length -1 : current -1);
-    });
     const handleLoadProjects = (data:any) => {
         const tempList:Project[] = [];
         data?.map((item:Project)=>{
@@ -47,11 +40,8 @@ function ProjectGallery() {
     }
 
     useEffect(() => {
-        (rawProjectDataRes.json())
-            .then(r => {
-                setRawData(r);
-            });
-    }, [rawProjectDataRes])
+        setRawData(json)
+    }, [json])
 
     useEffect(() => {
         handleLoadProjects(rawData?.projects);

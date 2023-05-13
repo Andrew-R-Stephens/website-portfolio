@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 import {useNavigate} from "react-router-dom";
-import ProjectGallery from "./Projects/ProjectGallery";
+import ProjectGallery from "./projects/ProjectGallery";
 
 function Projects() {
 
