@@ -1,6 +1,35 @@
-import React, {Fragment, useEffect} from "react";
+import React, {Fragment, ReactNode, useEffect, useState} from "react";
+import json from './../assets/data/about-me.json';
 
 function About() {
+
+    const [rawData, setRawData] = useState<any>();
+    const [parsedData, setParsedData] = useState<ParsedData>()
+
+    useEffect(() => {
+        setRawData(json)
+    }, [json])
+
+    useEffect(() => {
+        setParsedData(new ParsedData(rawData));
+    }, [rawData])
+
+    function parseRawDataToHTML(parentID:string): any {
+        const nodeClass= 'custom-node';
+        const parentElement = document.getElementById(parentID);
+
+        parsedData?.entries?.map((entry:ParsedDataEntry, index:number)=>{
+            const nodeType= (entry.type ? entry.type : "div");
+            const fullNode = "<" + nodeType +
+                " class = "+ nodeClass +">" + entry.content +  "</" + nodeType + ">";
+
+            let getNodes = (fullNodes:string) => new DOMParser().parseFromString(fullNodes, 'text/html').body.childNodes;
+
+            getNodes(fullNode).forEach((node:ChildNode)=> {
+                parentElement?.appendChild(node);
+            });
+        });
+    }
 
     return (
         <Fragment>
@@ -13,19 +42,42 @@ function About() {
                         </div>
                     </div>
                     <div className={'text-blurb-body'}>
-                        <p>
-                            Hello, my name is Andrew! I'm a full stack engineer and mobile app developer from
-                            Long Island, New York.
-                        </p>
-                        <p>
-                            I'm both highly motivated and curious, which has been demonstrated through my use of a multitude
-                            of different technologies over the last decade!
-                        </p>
+                        <div className={'text-blurb-body-inner'} id={'text-blurb-body-inner'}>
+                            { parseRawDataToHTML('text-blurb-body-inner') }
+                        </div>
                     </div>
                 </div>
             </div>
         </Fragment>
     )
+}
+
+class ParsedData {
+
+    entries:ParsedDataEntry[] = [];
+
+    constructor(data:any) {
+        if(data == undefined)
+            return;
+
+        const {aboutme} = data;
+        const {entries} = aboutme;
+
+        this.entries = []
+        entries.map((entry:any) => {
+            this.entries.push(new ParsedDataEntry(entry));
+        });
+    }
+}
+
+class ParsedDataEntry {
+    type:string = "";
+    content:string = "";
+
+    constructor(data:any) {
+        this.type = data.type;
+        this.content = data.content;
+    }
 }
 
 export default About;

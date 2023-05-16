@@ -1,0 +1,30 @@
+{
+  "aboutme" : {
+    "entries" : [
+      {
+        "type": "div",
+        "content" : "I'm a <label style=color:var(--importantColor)>Full-Stack Web Developer</label> / <label style=color:var(--importantColor)>Android Engineer."
+      },
+      {
+        "type": "div",
+        "content" : "Awarded <label style=color:var(--quaternaryColor)>B.S. in Computer and Information Science</label> from SUNY College at Old Westbury."
+      },
+      {
+        "type": "div",
+        "content" : "I have a deep <label style=color:var(--importantColor)>passion</label> <label style=color:var(--quaternaryColor)>for Software Engineering</label>."
+      },
+      {
+        "type": "div",
+        "content" : "<label style=color:var(--quaternaryColor)>Self-taught</label>, <label style=color:var(--quaternaryColor)>classically trained</label>, always seeking to improve."
+      },
+      {
+        "type": "div",
+        "content" : "Knowledgeable and practiced across a wide range of technologies."
+      },
+      {
+        "type": "div",
+        "content" : "<label style=color:var(--importantColor)>Publisher</label> of a successful <label style=color:#3DDC84>Android</label> application!"
+      }
+    ]
+  }
+}

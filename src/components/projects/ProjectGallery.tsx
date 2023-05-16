@@ -106,8 +106,7 @@ function BouyDisplay(data:any) {
         setProject(data.data);
     }, [data])
 
-    function getImage1Property(data: any[]) {
-        console.log(data)
+    function getCSSProperties(data: any[]) {
         if(data === undefined || data == null || data.length == 0) {
             return "";
         }
@@ -128,24 +127,24 @@ function BouyDisplay(data:any) {
                             <div className={'project-bouy-inner-wrapper-head'}>
                                 <div className={'project-bouy-inner-wrapper-head-image-wrapper'}
                                     style={
-                                        getImage1Property(
+                                        getCSSProperties(
                                             [{variable:'--bg-color', value:project?.images?.at(0)?.color},
                                             {variable:'--filter', value:project?.images?.at(0)?.filter}]
                                         )
                                 }>
                                     <div className={'project-bouy-inner-wrapper-head-image'}>
-                                        <img src={project?.images?.at(0)?.url}/>
+                                        <img src={project?.images?.at(0)?.url} alt={'Technology Image'}/>
                                     </div>
                                 </div>
                                 <div className={'project-bouy-inner-wrapper-head-image-wrapper'}
                                     style={
-                                        getImage1Property(
+                                        getCSSProperties(
                                             [{variable:'--bg-color', value:project?.images?.at(1)?.color},
                                                 {variable:'--filter', value:project?.images?.at(1)?.filter}]
                                         )
                                 }>
                                     <div className={'project-bouy-inner-wrapper-head-image'}>
-                                        <img src={project?.images?.at(1)?.url}/>
+                                        <img src={project?.images?.at(1)?.url} alt={'Project Image'}/>
                                     </div>
                                 </div>
                             </div>
@@ -154,8 +153,8 @@ function BouyDisplay(data:any) {
                             <div className={'project-bouy-inner-wrapper-body-inner'}>
                                 <div className={'project-bouy-inner-wrapper-body-inner-item-wrapper'}>
                                     <label className={'project-bouy-title'}>{project?.title}</label>
-                                        <label className={'project-bouy-title-alt'}>{project?.altTitle}</label>
-                                        <label className={'project-bouy-genre'}>{project?.genre}</label>
+                                    <label className={'project-bouy-title-alt'}>{project?.altTitle}</label>
+                                    <label className={'project-bouy-genre'}>{project?.genre}</label>
                                 </div>
                             </div>
                         </div>
@@ -197,8 +196,6 @@ class Project {
         this.images = data.images;
         this.githubUrl = data.githubUrl;
         this.demoUrl = data.demoUrl;
-
-        console.log(data)
     }
 }
 

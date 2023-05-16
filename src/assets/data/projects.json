@@ -2,12 +2,12 @@
   "projects": [
     {
       "title": "Phasmophobia Evidence Tool",
-      "altTitle": "Native Android Application",
-      "genre": "Android Application",
+      "altTitle": "Immersive Companion Tool",
+      "genre": "Native Android Application",
       "publication": true,
       "details": "Phasmophobia Evidence Tool (PET) is a companion app for the game Phasmophobia. PET enhances the user experience by supplementing in-game mechanics with a more involved investigation system.\n\nP.E.T. acts as an unofficial companion tool for \"Phasmophobia\". It gives extra tools to players, enabling them to play the game with more efficiency while enhancing immersion. In the past, P.E.T. has solved a number of issues that Phasmophobia has.",
       "tech": [
-        "java", "android-studio", "google-play", "google-analytics", "google-firebase", "google-admob", "gradle", "xml", "git", "github"
+        "java", "android", "google-play", "google-analytics", "google-firebase", "google-admob", "gradle", "xml", "git", "github"
       ],
       "images": [
         {
@@ -25,8 +25,8 @@
     },
     {
       "title": "Into The Woods",
-      "altTitle": "2D Java Game",
-      "genre": "Standalone",
+      "altTitle": "2D Platformer in Java",
+      "genre": "Standalone Application",
       "publication": false,
       "details": "Into the Woods is a 2D platformer game which derives ideas from platformer titles like \"Ori and the Blind Forest\".\n\nThe entire game was developed from scratch.",
       "tech": [
@@ -42,17 +42,17 @@
           "color": "#FFFFFF"
         }
       ],
-      "githubUrl": "https://github.com/Andrew-R-Stephens/game-Into_the_Woods"
+      "githubUrl": "https://github.com/Andrew-R-Stephens/game-Into_the_Woods",
+      "demoUrl": "https://github.com/Andrew-R-Stephens/game-Into_the_Woods/releases/download/Into-The-Woods/Into.The.Woods.jar"
     },
     {
       "title": "Aleutian Islands University",
       "altTitle": "Senior Capstone Project",
-      "genre": "Web App",
+      "genre": "Full Scale Web Application",
       "publication": true,
       "details": "Phasmophobia Evidence Tool (PET) is a companion app for the game Phasmophobia. PET enhances the user experience by supplementing in-game mechanics with a more involved investigation system.\n\nP.E.T. acts as an unofficial companion tool for \"Phasmophobia\". It gives extra tools to players, enabling them to play the game with more efficiency while enhancing immersion. In the past, P.E.T. has solved a number of issues that Phasmophobia has.",
       "tech": [
-        "nodejs", "reactjs", "typescript", "css", "html", "php", "mysql", "mui", "chartsjs", "ubuntu", "apache", "aws", "intellij", "mysql_workbench", "filezilla", "git", "github", "json"
-
+        "nodejs", "reactjs", "typescript", "javascript", "css", "html", "php", "mysql", "mui", "chartsjs", "ubuntu", "apache", "aws", "intellij", "mysql_workbench", "filezilla", "git", "github", "json"
       ],
       "images": [
         {
@@ -71,7 +71,7 @@
   ],
   "technologies": {
     "selector_whitelist": [
-      "git", "nodejs", "reactjs", "typescript", "css", "html", "php", "mysql", "ubuntu", "apache", "aws", "android-studio", "java"
+      "git", "nodejs", "reactjs", "typescript", "javascript", "css", "html", "php", "mysql", "ubuntu", "apache", "aws", "android", "java"
     ]
   }
 }

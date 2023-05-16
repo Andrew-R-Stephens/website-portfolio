@@ -44,7 +44,6 @@ function Body() {
         <div className={'all-body'}>
             <About/>
             <Projects/>
-            {/*<CVitae/>*/}
             <Contact/>
             <Footer/>
         </div>
