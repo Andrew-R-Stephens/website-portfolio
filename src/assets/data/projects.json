@@ -5,7 +5,7 @@
       "altTitle": "Immersive Companion Tool",
       "genre": "Native Android Application",
       "publication": true,
-      "details": "Phasmophobia Evidence Tool (PET) is a companion app for the game Phasmophobia. PET enhances the user experience by supplementing in-game mechanics with a more involved investigation system.\n\nP.E.T. acts as an unofficial companion tool for \"Phasmophobia\". It gives extra tools to players, enabling them to play the game with more efficiency while enhancing immersion. In the past, P.E.T. has solved a number of issues that Phasmophobia has.",
+      "details": "Companion app for the game Phasmophobia. Enhances the user experience by supplementing in-game mechanics with a more involved investigation system.\n\nP.E.T. acts as an unofficial companion tool for \"Phasmophobia\". It gives extra tools to players, enabling them to play the game with more efficiency while enhancing immersion. In the past, P.E.T. has solved a number of issues that Phasmophobia has.",
       "tech": [
         "java", "android", "google-play", "google-analytics", "google-firebase", "google-admob", "gradle", "xml", "git", "github"
       ],
@@ -66,12 +66,97 @@
         }
       ],
       "githubUrl": "https://github.com/Andrew-R-Stephens/website-Aleutian_Islands_University",
-      "demoUrl": "https://www.owsysdb.com/"
+      "demoUrl": "https://aiu.tritium-studios.com/"
     }
   ],
   "technologies": {
     "selector_whitelist": [
       "git", "nodejs", "reactjs", "typescript", "javascript", "css", "html", "php", "mysql", "ubuntu", "apache", "aws", "android", "java"
+    ],
+    "icon_data": [
+      {
+        "name": "git",
+        "url": "https://simpleicons.org/icons/git.svg",
+        "color": "#00000000",
+        "filter": "invert(38%) sepia(87%) saturate(2350%) hue-rotate(343deg) brightness(98%) contrast(92%)"
+      },
+      {
+        "name": "nodejs",
+        "url": "https://simpleicons.org/icons/nodedotjs.svg",
+        "color": "#00000000",
+        "filter": "invert(51%) sepia(8%) saturate(3147%) hue-rotate(71deg) brightness(94%) contrast(102%)"
+      },
+      {
+        "name": "reactjs",
+        "url": "https://simpleicons.org/icons/react.svg",
+        "color": "#00000000",
+        "filter": "invert(85%) sepia(51%) saturate(2144%) hue-rotate(163deg) brightness(97%) contrast(104%)"
+      },
+      {
+        "name": "typescript",
+        "url": "https://simpleicons.org/icons/typescript.svg",
+        "color": "#00000000",
+        "filter": "invert(40%) sepia(93%) saturate(467%) hue-rotate(171deg) brightness(89%) contrast(89%)"
+      },
+      {
+        "name": "javascript",
+        "url": "https://simpleicons.org/icons/javascript.svg",
+        "color": "#00000000",
+        "filter": "invert(96%) sepia(72%) saturate(7497%) hue-rotate(338deg) brightness(101%) contrast(94%)"
+      },
+      {
+        "name": "css",
+        "url": "https://simpleicons.org/icons/css3.svg",
+        "color": "#00000000",
+        "filter": "invert(27%) sepia(88%) saturate(4119%) hue-rotate(191deg) brightness(92%) contrast(84%)"
+      },
+      {
+        "name": "html",
+        "url": "https://simpleicons.org/icons/html5.svg",
+        "color": "#00000000",
+        "filter": "invert(42%) sepia(75%) saturate(4254%) hue-rotate(351deg) brightness(95%) contrast(86%)"
+      },
+      {
+        "name": "php",
+        "url": "https://simpleicons.org/icons/php.svg",
+        "color": "#00000000",
+        "filter": "invert(56%) sepia(13%) saturate(1133%) hue-rotate(198deg) brightness(86%) contrast(94%)"
+      },
+      {
+        "name": "mysql",
+        "url": "https://simpleicons.org/icons/mysql.svg",
+        "color": "#00000000",
+        "filter": "invert(57%) sepia(12%) saturate(1815%) hue-rotate(163deg) brightness(98%) contrast(91%)"
+      },
+      {
+        "name": "ubuntu",
+        "url": "https://simpleicons.org/icons/ubuntu.svg",
+        "color": "#00000000",
+        "filter": "invert(43%) sepia(98%) saturate(2688%) hue-rotate(349deg) brightness(94%) contrast(94%)"
+      },
+      {
+        "name": "apache",
+        "url": "https://simpleicons.org/icons/apache.svg",
+        "color": "#00000000",
+        "filter": "invert(14%) sepia(53%) saturate(6939%) hue-rotate(350deg) brightness(100%) contrast(86%)"
+      },
+      {
+        "name": "aws",
+        "url": "https://simpleicons.org/icons/amazonaws.svg",
+        "color": "#00000000",
+        "filter": "invert(84%) sepia(8%) saturate(2242%) hue-rotate(174deg) brightness(93%) contrast(92%)"
+      },
+      {
+        "name": "android",
+        "url": "https://simpleicons.org/icons/android.svg",
+        "color": "#00000000",
+        "filter": "invert(68%) sepia(89%) saturate(360%) hue-rotate(88deg) brightness(93%) contrast(86%)"
+      },
+      {
+        "name": "java",
+        "url": "https://cdn.icon-icons.com/icons2/2415/PNG/512/java_original_wordmark_logo_icon_146459.png",
+        "color": "#00000000"
+      }
     ]
   }
 }

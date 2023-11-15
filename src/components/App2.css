@@ -640,7 +640,7 @@ input[type=button] {
     display: inline-block;
     margin: auto;
     height: auto;
-    width: auto;
+    width: 100%;
 }
 
 .project-bouy {
@@ -729,7 +729,7 @@ input[type=button] {
     min-height: auto;
     border-radius: 1svmin;
     box-sizing: border-box;
-    border: 2px solid var(--tertiaryColor);
+    border: clamp(2px, .25svmin, 5px) solid var(--tertiaryColor);
 }
 
 .project-bouy-inner > * {
@@ -745,11 +745,12 @@ input[type=button] {
     margin: auto;
     width: 100%;
     height: auto;
-    min-height: fit-content;;
-    background: rgba(102, 192, 244, 0.25);
+    min-height: fit-content;
+    background: #15202c;
+    /*background: rgba(102, 192, 244, 0.25);*/
     box-shadow: 0 0 0 0 var(--quaternaryColor);
-    border-radius: 1svmin;
-    border: 0px solid var(--secondaryColor);
+    border-radius: 1svmin 1svmin 0 0;
+    border: 0 solid var(--secondaryColor);
 }
 
 .project-bouy-inner-footer-wrapper {
@@ -772,7 +773,7 @@ input[type=button] {
 .project-bouy-inner-wrapper-head-wrapper {
     display: block;
     position: relative;
-    margin: auto;
+    margin: 0 auto;
     height: 100%;
     width: 25%;
     aspect-ratio: 1;
@@ -850,9 +851,10 @@ input[type=button] {
 
 .project-bouy-inner-wrapper-body {
     display: flex;
-    width: 100%;
-    height: border-box;
+    width: 75%;
+    box-sizing: border-box;
     min-height: 100%;
+    background: var(--secondaryColor);
     box-shadow: inset 0 0 .75svmin .75svmin var(--secondaryColor);
     border: 0 solid transparent;
     border-radius: 0 1svmin 0 0;
@@ -923,6 +925,13 @@ input[type=button] {
     background: #15202c;
 }
 
+.project-bouy-body {
+    position: relative;
+    height: 100%;
+    margin: auto;
+    min-width: 100%;
+}
+
 .project-bouy-title-alt {
     display: inline;
     position: relative;
@@ -943,12 +952,11 @@ input[type=button] {
 }
 
 .project-bouy-genre {
-    display: inline;
+    display: flex;
     position: relative;
     margin: auto;
     width: 100%;
     font-size: clamp(8px, 1.75svmin, 48px);
-    border: 0 solid transparent;
 }
 
 .project-bouy-isPublication {
@@ -963,7 +971,7 @@ input[type=button] {
 .project-bouy-inner-wrapper-links-wrapper {
     display: flex;
     width: 100%;
-    height: border-box;
+    box-sizing: border-box;
     min-height: 100%;
     background: #15202c;
     border-radius: 0 0 1svmin 1svmin;
@@ -995,8 +1003,31 @@ input[type=button] {
 
 }
 
-.project-bouy-technologies {
-    padding: clamp(8px, 1svmin, 16px);
+.project-bouy-technologies-wrapper {
+    margin: clamp(8px, 1svmin, 16px);
+    --bg-color: #FFFFFF;
+    --filter: invert(0%);
+}
+
+.project-bouy-technology-wrapper {
+    display: inline-flex;
+    margin: auto clamp(2px, 1svmin, 8px);
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.project-bouy-technology {
+    display: flex;
+    position: relative;
+}
+
+.project-bouy-technology img {
+    position: relative;
+    display: inline;
+    height: clamp(16px, 3vmin, 48px);
+    aspect-ratio: 1;
+    background: var(--bg-color);
+    filter: var(--filter);
 }
 
 

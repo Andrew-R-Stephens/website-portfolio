@@ -5,7 +5,8 @@ function ProjectGallery() {
 
     const [rawData, setRawData] = useState<any>({});
     const [projects, setProjects] = useState<Project[]>([]);
-    const [allTechnologies, setTechnologies] = useState<string[]>([]);
+    const [technologiesData, setTechnologyData] = useState<any>();
+    const [usedTechnologies, setUsedTechnologies] = useState<string[]>([]);
     const [currentTechnology, setCurrentTechnology] = useState<string>("");
 
     const handleLoadProjects = (data:any) => {
@@ -28,11 +29,13 @@ function ProjectGallery() {
             })
         })
 
+        setTechnologyData(data);
+
         const orderedTechnologies = technologies.sort();
         const finalList = orderedTechnologies.filter((item:string)=>{
             return data.selector_whitelist.includes(item)
         })
-        setTechnologies(finalList);
+        setUsedTechnologies(finalList);
     }
 
     const handleTechnologySelect = (tech:string) => {
@@ -56,7 +59,7 @@ function ProjectGallery() {
             <div style={{display:"inline-flex", width: "100%", height:"fit-content"}}>
                 <div className={'carousel-technology-wrapper'}>
                 {
-                    allTechnologies.map((technology:string)=>{
+                    usedTechnologies.map((technology:string)=>{
                         return (
                             <div className={'carousel-technology-item-wrapper'}
                                  onClick={()=>handleTechnologySelect(technology)}
@@ -90,7 +93,8 @@ function ProjectGallery() {
         return projects?.map((project:any, index:number)=>{
             return <BouyDisplay
                 id={"bouy"+index}
-                data={project}
+                projectData={project}
+                technologyData={technologiesData}
                 role={currentTechnology?.length == 0 || project.tech.includes(currentTechnology) ?
                     'active' : 'inactive'}/>
         })
@@ -103,7 +107,7 @@ function BouyDisplay(data:any) {
     const[project, setProject] = useState<Project>();
 
     useEffect(() => {
-        setProject(data.data);
+        setProject(data.projectData);
     }, [data])
 
     function getCSSProperties(data: any[]) {
@@ -116,6 +120,18 @@ function BouyDisplay(data:any) {
         })
 
         return cssProperty;
+    }
+
+    function getTechURLS() {
+        const filteredList:any[] = [];
+        data?.technologyData?.icon_data?.map((generalTech:any) => {
+            project?.tech?.map((projectTech:any) => {
+                if(generalTech.name === projectTech) {
+                    filteredList.push(generalTech)
+                }
+            })
+        })
+        return filteredList;
     }
 
     return (
@@ -152,9 +168,36 @@ function BouyDisplay(data:any) {
                         <div className={'project-bouy-inner-wrapper-body'}>
                             <div className={'project-bouy-inner-wrapper-body-inner'}>
                                 <div className={'project-bouy-inner-wrapper-body-inner-item-wrapper'}>
-                                    <label className={'project-bouy-title'}>{project?.title}</label>
-                                    <label className={'project-bouy-title-alt'}>{project?.altTitle}</label>
-                                    <label className={'project-bouy-genre'}>{project?.genre}</label>
+                                    <div className={'project-bouy-title'}>
+                                        <label className={'project-bouy-title'}>{project?.title}</label>
+                                    </div>
+                                    <div className={'project-bouy-body'}>
+                                        <div className={'project-bouy-title-alt'}>
+                                            <label>{project?.altTitle}</label>
+                                        </div>
+                                        <div className={'project-bouy-genre'}>
+                                            <label>{project?.genre}</label>
+                                        </div>
+                                        <div className={'project-bouy-technologies-wrapper'}>
+                                            {
+                                                getTechURLS().map((generalTech:any) => {
+                                                    return (
+                                                        <div className={'project-bouy-technology-wrapper'}
+                                                                style={
+                                                                    getCSSProperties(
+                                                                        [{variable:'--bg-color', value:generalTech.color},
+                                                                            {variable:'--filter', value:generalTech.filter}]
+                                                                    )
+                                                                }>
+                                                            <div className={'project-bouy-technology'}>
+                                                                <img src={generalTech.url} alt={'Project Image'}/>
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })
+                                            }
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
