@@ -1,17 +1,17 @@
 import React, {Fragment, useEffect} from "react";
-import Hero from "./Hero";
-import Body from "./Body";
-import Header from "./Header";
-import "./App2.css";
+import "./App.css";
 import './../assets/fonts/Esprit/Esprit.ttf'
 import './../assets/fonts/Oldtimer/Oldtimer.ttf'
 import './../assets/fonts/TT Severs/TT-Severs-Regular.otf'
 import './../assets/fonts/TT Severs/TT-Severs-Bold.otf'
 import './../assets/fonts/TT Severs/TT-Severs-Medium.otf'
-import Footer from "./Footer";
 import axios from "axios";
+import Header from "./header/Header";
+import Hero from "./hero/Hero";
+import Body from "./body/Body";
+import "./Fonts.css"
 
-function App2() {
+function App() {
 
     useEffect(() => {
         axios.get("https://api.tritium-studios.com/pilot", {
@@ -31,4 +31,4 @@ function App2() {
     )
 }
 
-export default App2;
+export default App;

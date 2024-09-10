@@ -7,11 +7,11 @@
       "publication": true,
       "details": "Companion app for the game Phasmophobia. Enhances the user experience by supplementing in-game mechanics with a more involved investigation system.\n\nP.E.T. acts as an unofficial companion tool for \"Phasmophobia\". It gives extra tools to players, enabling them to play the game with more efficiency while enhancing immersion. In the past, P.E.T. has solved a number of issues that Phasmophobia has.",
       "tech": [
-        "java", "android", "google-play", "google-analytics", "google-firebase", "google-admob", "gradle", "xml", "git", "github"
+        "android", "java", "kotlin", "jetpack compose", "google-play", "google-analytics", "google-firebase", "google-admob", "gradle", "xml", "git", "github"
       ],
       "images": [
         {
-          "url": "https://raw.githubusercontent.com/Andrew-R-Stephens/PET-Source/master/app/src/main/res/drawable-hdpi/app_icon_sm.png",
+          "url": "https://raw.githubusercontent.com/Andrew-R-Stephens/Andrew-R-Stephens/master/assets/app_icon_sm.png",
           "color": "#000000"
         },
         {
@@ -71,26 +71,37 @@
   ],
   "technologies": {
     "selector_whitelist": [
-      "git", "nodejs", "reactjs", "typescript", "javascript", "css", "html", "php", "mysql", "ubuntu", "apache", "aws", "android", "java"
+      "jetpack compose", "kotlin", "git", "nodejs", "reactjs", "typescript", "javascript", "css", "html", "php", "mysql", "ubuntu", "apache", "aws", "android", "java"
     ],
     "icon_data": [
       {
-        "name": "git",
-        "url": "https://simpleicons.org/icons/git.svg",
+        "name": "android",
+        "url": "https://simpleicons.org/icons/android.svg",
         "color": "#00000000",
-        "filter": "invert(38%) sepia(87%) saturate(2350%) hue-rotate(343deg) brightness(98%) contrast(92%)"
-      },
-      {
-        "name": "nodejs",
-        "url": "https://simpleicons.org/icons/nodedotjs.svg",
-        "color": "#00000000",
-        "filter": "invert(51%) sepia(8%) saturate(3147%) hue-rotate(71deg) brightness(94%) contrast(102%)"
+        "filter": "invert(68%) sepia(89%) saturate(360%) hue-rotate(88deg) brightness(93%) contrast(86%)"
       },
       {
         "name": "reactjs",
         "url": "https://simpleicons.org/icons/react.svg",
         "color": "#00000000",
         "filter": "invert(85%) sepia(51%) saturate(2144%) hue-rotate(163deg) brightness(97%) contrast(104%)"
+      },
+      {
+        "name": "kotlin",
+        "url": "https://simpleicons.org/icons/kotlin.svg",
+        "color": "#00000000",
+        "filter": "invert(41%) sepia(54%) saturate(5718%) hue-rotate(239deg) brightness(99%) contrast(104%)"
+      },
+      {
+        "name": "jetpack compose",
+        "url": "https://simpleicons.org/icons/jetpackcompose.svg",
+        "color": "#00000000",
+        "filter": "invert(44%) sepia(75%) saturate(570%) hue-rotate(180deg) brightness(97%) contrast(97%)"
+      },
+      {
+        "name": "java",
+        "url": "https://cdn.icon-icons.com/icons2/2415/PNG/512/java_original_wordmark_logo_icon_146459.png",
+        "color": "#00000000"
       },
       {
         "name": "typescript",
@@ -142,20 +153,21 @@
       },
       {
         "name": "aws",
-        "url": "https://simpleicons.org/icons/amazonaws.svg",
+        "url": "https://simpleicons.org/icons/amazonwebservices.svg",
         "color": "#00000000",
         "filter": "invert(84%) sepia(8%) saturate(2242%) hue-rotate(174deg) brightness(93%) contrast(92%)"
       },
       {
-        "name": "android",
-        "url": "https://simpleicons.org/icons/android.svg",
+        "name": "git",
+        "url": "https://simpleicons.org/icons/git.svg",
         "color": "#00000000",
-        "filter": "invert(68%) sepia(89%) saturate(360%) hue-rotate(88deg) brightness(93%) contrast(86%)"
+        "filter": "invert(38%) sepia(87%) saturate(2350%) hue-rotate(343deg) brightness(98%) contrast(92%)"
       },
       {
-        "name": "java",
-        "url": "https://cdn.icon-icons.com/icons2/2415/PNG/512/java_original_wordmark_logo_icon_146459.png",
-        "color": "#00000000"
+        "name": "nodejs",
+        "url": "https://simpleicons.org/icons/nodedotjs.svg",
+        "color": "#00000000",
+        "filter": "invert(51%) sepia(8%) saturate(3147%) hue-rotate(71deg) brightness(94%) contrast(102%)"
       }
     ]
   }

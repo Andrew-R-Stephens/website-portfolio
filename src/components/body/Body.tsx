@@ -1,9 +1,9 @@
-import About from "./About";
-import CVitae from "./CVitae";
+
 import React, {Fragment, useEffect} from "react";
-import Projects from "./Projects";
-import Contact from "./Contact";
-import Footer from "./Footer";
+import About from "./about/About";
+import Projects from "./projects/Projects";
+import Contact from "./contact/Contact";
+import Footer from "../footer/Footer";
 
 function Body() {
 

@@ -1,0 +1,70 @@
+
+/**
+    Footer page
+ */
+
+.footer-body {
+    display: inline-flex;
+    margin: clamp(8px, 2svw, 32px) clamp(8px, 2svh, 32px);
+    color: var(--quinternaryColor);
+    width: 100%;
+    height: 100%;
+}
+
+.footer-body-wrapper {
+    display: flex;
+    margin: auto;
+    padding: clamp(32px, 3svh, 64px) 0;
+    width: clamp(100%, 100%, 1080px);
+    height: fit-content;
+    background-color: var(--tertiaryColor);
+}
+
+.footer-body-inner-wrapper:first-child {
+    display: flex;
+    width: 25%;
+    margin: auto;
+    filter: drop-shadow(0 0 5px var(--primaryColor));
+}
+
+.footer-body-inner-wrapper:last-child {
+    display: flex;
+    width: 25%;
+    margin: 0 0 0 auto;
+    filter: drop-shadow(0 0 5px var(--primaryColor));
+}
+
+.footer-icon-wrapper {
+    display: inline-block;
+    margin: auto auto auto 0;
+    text-align: center;
+}
+
+.footer-content-wrapper {
+    display: block;
+    width: 100%;
+    margin: auto auto auto 0;
+}
+
+.footer-content-label-wrapper {
+    padding: clamp(4px, 2svmin, 32px) 0;
+}
+
+.footer-logo-label {
+    color: var(--quinternaryColor);
+    font-size: clamp(12px, 2svmin, 48px);
+    text-decoration: none;
+}
+
+.footer-content-label {
+    cursor: pointer;
+    color: var(--quinternaryColor);
+    font-size: clamp(12px, 2svmin, 48px);
+    text-decoration: none;
+}
+
+.footer-content-label:hover:not(:active) {
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out, transform 200ms ease-in-out;
+    color: var(--quaternaryColor);
+    transform: scale(110%);
+}

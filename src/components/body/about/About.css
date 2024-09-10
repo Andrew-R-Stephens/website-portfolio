@@ -1,0 +1,79 @@
+
+/**
+    About page
+ */
+
+.about-body {
+    display: block;
+    max-width: 1920px;
+    width: 80%;
+    margin: auto;
+}
+
+.about-body-top {
+    display: flex;
+    margin: 0 auto 0svh auto;
+}
+
+.about-body-top-label {
+    display: flex;
+    margin: 0 auto 3svh auto;
+    textAlign: center;
+    /*margin:auto 0 auto auto;*/
+}
+
+.about-body-top-label {
+    font-family: Oldtimer, serif;
+    font-size: clamp(36px, 5svw, 120px) !important;
+    color: var(--quaternaryColor) !important;
+}
+
+.about-body-top-label-small {
+    position: relative;
+    font-family: TTSSevers-Medium, serif, serif;
+    font-size: clamp(12px, 1.5svw, 36px) !important;
+    margin-left: 10%;
+    margin-right: auto;
+    color: var(--quinternaryColor);
+}
+
+.about-text-blurb-label {
+    padding: clamp(8px, 1svmin, 16px) clamp(8px, 1svmin, 16px) clamp(8px, 1svmin, 16px) clamp(8px, 2svmin, 16px);
+    /*background: var(--primaryColor);*/
+    background: var(--quaternaryColor);
+    border-radius: 15px 15px 0 0;
+    color: snow;
+    font-size: clamp(36px, 2.5svmin, 72px);
+    width: 80%;
+    margin: auto;
+}
+
+.about-text-blurb-body {
+    padding: clamp(8px, 1svmin, 16px) clamp(8px, 1svmin, 16px) clamp(8px, 1svmin, 16px) clamp(8px, 2svmin, 16px);
+    border: 0 solid transparent;
+    border-radius: 0 0 15px 15px;
+    width: 80%;
+    margin: auto;
+}
+
+.about-text-blurb-body-inner {
+    display: block;
+    padding: clamp(8px, 1svmin, 16px) clamp(8px, 1svmin, 16px) clamp(8px, 1svmin, 16px) clamp(8px, 2svmin, 16px);
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    border: 3px solid rgba(102, 223, 244, 0.49);
+    border-radius: 1svmin;
+    background: var(--primaryColor);
+}
+
+.about-text-blurb-body-inner > .custom-node {
+    width: 100%;
+    display: inline-block;
+    margin: clamp(8px, 1svmin, 16px) auto;
+    color: var(--quinternaryColor);
+    font-size: clamp(12px, 2svmin, 32px);
+    text-align: center;
+    box-sizing: border-box;
+    padding: clamp(8px, 1svmin, 16px);
+}

@@ -1,6 +1,7 @@
 import React, {Fragment} from "react";
 import {useNavigate} from "react-router-dom";
-import {ReactComponent as SiteLogo} from './../assets/vectors/logo.svg'
+import {ReactComponent as SiteLogo} from './../../assets/vectors/logo.svg'
+import "./Footer.css"
 
 function Footer() {
 

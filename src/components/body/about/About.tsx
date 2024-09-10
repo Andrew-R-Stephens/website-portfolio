@@ -1,5 +1,6 @@
 import React, {Fragment, ReactNode, useEffect, useState} from "react";
-import json from './../assets/data/about-me.json';
+import json from './../../../assets/data/about-me.json';
+import './About.css'
 
 function About() {
 
@@ -41,8 +42,8 @@ function About() {
                             ABOUT ME
                         </div>
                     </div>
-                    <div className={'text-blurb-body'}>
-                        <div className={'text-blurb-body-inner'} id={'text-blurb-body-inner'}>
+                    <div className={'about-text-blurb-body'}>
+                        <div className={'about-text-blurb-body-inner'} id={'text-blurb-body-inner'}>
                             { parseRawDataToHTML('text-blurb-body-inner') }
                         </div>
                     </div>

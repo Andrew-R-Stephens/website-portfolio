@@ -1,0 +1,187 @@
+
+/**
+    Contact Page
+ */
+
+.contact-body {
+    display: block;
+    max-width: 1920px;
+    width: 80%;
+    margin: auto;
+}
+
+.contact-body-top {
+    display: block;
+    margin: 0 auto 3svh auto;
+}
+
+.contact-body-top-inner {
+    display: flex;
+    margin: 0 auto 3svh auto;
+    width: fit-content;
+}
+
+.contact-body-top-label {
+    display: flex;
+    margin: 0 auto 3svh auto;
+    width: fit-content;
+    animation: none;
+}
+
+.contact-socials-wrapper {
+    display: flex;
+    width: 75%;
+    margin: auto;
+}
+
+.contact-logo-wrapper {
+    display: block;
+    margin:auto;
+    height: clamp(32px, 4svmin, 98px);
+    opacity: 1;
+    aspect-ratio: 1;
+}
+
+.contact-logo-wrapper:first-child {
+    margin-right: 3svw;
+}
+
+.contact-logo-wrapper:last-child {
+    margin-left: 3svw;
+}
+
+.contact-logo-wrapper:not(:first-child):not(:last-child) {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.contact-logo {
+    position: relative;
+    background-color: transparent;
+    /*filter: invert(1);*/
+    height: clamp(48px, 1svmin, 3svmin);
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.contact-logo-github {
+    content: url("https://simpleicons.org/icons/github.svg");
+    filter: invert(91%) sepia(7%) saturate(419%) hue-rotate(164deg) brightness(93%) contrast(91%);
+    cursor: pointer;
+}
+
+.contact-logo-linkedin {
+    content: url("https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg");/*
+    filter: invert(91%) sepia(7%) saturate(419%) hue-rotate(164deg) brightness(93%) contrast(91%);*/
+    width: 100%;
+    cursor: pointer;
+}
+
+.contact-split-wrapper {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin: 1.5svh auto auto auto;
+}
+
+.contact-split-line {
+    display: inline-block;
+    margin: auto;
+    width: 25%;
+    height: 100%;
+}
+
+.contact-split-line:first-child {
+    margin-right: 0;
+    padding-right: 8px;
+}
+
+.contact-split-line:last-child {
+    margin-left: 0;
+    padding-left: 8px;
+}
+
+.contact-split-label {
+    margin: auto 1.5svw;
+    width: fit-content;
+    height: fit-content;
+    color: var(--quinternaryColor);
+    font-size: clamp(12px, 1svmin, 24px);
+    font-family: TTSSevers-Bold, serif;
+    padding: clamp(4px, 1svmin, 16px);
+    border: 1px solid white;
+    border-radius: 25%;
+}
+
+.contact-form-label {
+    display: inline-flex;
+    margin: auto auto auto 0;
+    color: var(--quinternaryColor);
+    font-size: clamp(12px, 2svmin, 48px);
+    text-decoration: none;
+}
+
+.contact-form-label::after {
+    content: attr(data-end);
+    color: var(--importantColor);
+}
+
+.contact-form-label-wrapper {
+    text-align: left;
+    margin: auto auto auto 12.5%;
+}
+
+.contact-form {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+.contact-form input {
+    color: var(--primaryColor);
+    font-size: clamp(12px, 2svmin, 48px);
+    padding: 8px;
+    box-sizing: border-box;
+    display: flex;
+    margin: auto auto 3svh;
+    width: 75%;
+}
+
+input[type="submit"].contact-submit {
+    all: unset;
+    margin: auto;
+    padding: 16px 8px;
+    width: clamp(56px, 17svw, 100px);
+    text-align: center;
+    font-size: clamp(12px, 1.5svw, 24px);
+    border: 2px solid var(--quinternaryColor);
+    border-radius: 15px;
+    background: linear-gradient(180deg, rgb(35, 56, 77) 15%, rgba(27,40,56,1) 50%);
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out, transform 200ms ease-in-out;
+    color: var(--quinternaryColor);
+    transform: scale(100%);
+    cursor: pointer;
+}
+
+.contact-name {
+    display: flex;
+    width: 100%;
+}
+
+.contact-inner {
+    display: block;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-addresses {
+    display: inline-flex;
+    width: 100%;
+}
+
+fieldset {
+    all: unset;
+    display: flex;
+    margin: auto;
+}

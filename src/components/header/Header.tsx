@@ -1,5 +1,6 @@
 import React, {Fragment, useEffect, useRef, useState} from "react";
-import {ReactComponent as SiteLogo} from './../assets/vectors/logo.svg'
+import {ReactComponent as SiteLogo} from './../../assets/vectors/logo.svg'
+import "./Header.css"
 
 function Header() {
 

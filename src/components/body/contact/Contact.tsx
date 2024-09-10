@@ -1,8 +1,7 @@
 import React, {Fragment} from "react";
+import './Contact.css'
 
 function Contact() {
-
-
 
     return (
         <Fragment>

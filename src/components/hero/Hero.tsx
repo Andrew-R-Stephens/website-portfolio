@@ -1,6 +1,5 @@
 import React, {Fragment, useEffect, useRef, useState} from "react";
-import {ReactComponent as SiteLogo} from './assets/vectors/logo.svg'
-import Header from "./Header";
+import './Hero.css'
 
 function Hero() {
 
@@ -80,35 +79,35 @@ function Hero() {
 
     return (
         <Fragment>
-            <div className={'page-head'}>
-                <div className={'head-header-wrapper'}>
-                    <div className={'head-header'}>
+            <div className={'hero-page-head'}>
+                <div className={'hero-head-header-wrapper'}>
+                    <div className={'hero-head-header'}>
                         <div className={'hero-label'}>
-                            <div className={'label-container hero-label-wrapper'}
+                            <div className={'hero-label-container hero-label-wrapper'}
                                  style={{paddingBottom:"1.6svh"}}>
                                 <div style={{display:"flex"}}>
-                                    <label className={'simple-label hero-label-intro'}>
+                                    <label className={'hero-simple-label hero-label-intro'}>
                                         Hello, my name is
                                     </label>
                                 </div>
                                 <div>
-                                    <label className={'simple-label hero-label-name'}>
+                                    <label className={'hero-simple-label hero-label-name'}>
                                         Andrew Stephens
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div className={'hero-label'}>
-                            <div className={'label-container transition-fade-in'}
+                            <div className={'hero-label-container hero-transition-fade-in'}
                                  style={{animationDelay: "1s"}}>
-                                <label id={'label-description'}  className={'simple-label reduced-font'}>
+                                <label id={'label-description'}  className={'hero-simple-label hero-reduced-font'}>
                                     Full-stack Developer
                                 </label>
                             </div>
                             <div id={'label-container-last'}
-                                 className={'label-container transition-fade-in'}
+                                 className={'hero-label-container hero-transition-fade-in'}
                                  style={{animationDelay: "1300ms"}}>
-                                <label id={'label-description'} className={'simple-label reduced-font'}>
+                                <label id={'label-description'} className={'hero-simple-label hero-reduced-font'}>
                                     Native Android Engineer
                                 </label>
                             </div>

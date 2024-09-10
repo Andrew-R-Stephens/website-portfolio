@@ -1,0 +1,611 @@
+
+a {
+    all: unset;
+}
+
+*, html {
+    scroll-behavior: smooth !important;
+}
+
+* {
+    font-family: TTSSevers-Medium, serif;
+
+    --primaryColor: #171a21;
+    --secondaryColor: #1b2838;
+    --tertiaryColor: #2a475e;
+    --quaternaryColor: #66c0f4;
+    --quinternaryColor: #c7d5e0;
+    --importantColor: #ff6b6b;
+}
+
+body {
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: clamp(10px, .75svw, 16px);
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, rgba(23,26,33,1) 0%, rgba(27,40,56,1) 100%)
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--quaternaryColor);
+    border-radius: 10px;
+    padding: 5px 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #addffc;
+}
+
+.site-logo-wrapper {
+    display: block;
+    opacity: 0;
+    height: clamp(48px, 1svmin, 3svmin);
+    aspect-ratio: 1;
+    animation: fade-in 1s forwards ease-out;
+    animation-delay: 250ms;
+    padding-right: clamp(16px, 1svw, 48px);
+}
+
+.site-logo {
+    content: "";
+    position: relative;
+    background-color: transparent;
+    /*filter: invert(1);*/
+    filter: invert(91%) sepia(7%) saturate(419%) hue-rotate(164deg) brightness(93%) contrast(91%);
+    height: clamp(48px, 1svmin, 3svmin);
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.site-logo-wrapper-plain {
+    display: block;
+    opacity: 1;
+    margin: auto;
+    width: clamp(48px, 10svmin, 250px);
+    aspect-ratio: 1;
+    padding-bottom: clamp(8px, 1.5svh, 32px);
+}
+
+.site-logo-footer {
+    content: "";
+    position: relative;
+    background-color: transparent;
+    filter: invert(91%) sepia(7%) saturate(419%) hue-rotate(164deg) brightness(93%) contrast(91%);
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.site-link-wrapper-inner {
+    display: inline-flex;
+    margin: auto;
+    overflow-y: visible;
+    overflow-x: clip;
+}
+
+@keyframes burger-links-open {
+    from {
+        opacity: 0;
+        transform: translate(0, -50svh);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+input[type=button] {
+    font-family: TTSSevers-Bold, serif;
+}
+
+.input-button-wrapper {
+
+}
+
+.input-button {
+    all: unset;
+    margin: auto;
+    padding: 16px 8px;
+    width: clamp(56px, 17svw, 100px);
+    text-align: center;
+    font-size: clamp(12px, 1.5svw, 24px);
+    border: 2px solid var(--quinternaryColor);
+    border-left: 0;
+    border-right: 0;
+    border-radius: 15px;
+    background: linear-gradient(180deg, rgb(35, 56, 77) 15%, rgba(27,40,56,1) 50%);
+    box-shadow: 0 0 30px var(--primaryColor);
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out, transform 200ms ease-in-out;
+    color: var(--quinternaryColor);
+    transform: scale(100%);
+    cursor: pointer;
+}
+
+.input-button:hover:not(:active) {
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out, transform 200ms ease-in-out;
+    color: var(--quinternaryColor);
+    transform: scale(110%);
+}
+
+.input-button:focus:not(:active) {
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out, transform 200ms ease-in-out;
+    color: var(--quinternaryColor);
+    transform: scale(110%);
+}
+
+/**
+    All pages
+ */
+
+.page-body {
+    display: block;
+    margin: auto;
+    width: auto;
+    min-height: fit-content;
+    padding-top: 30svh;
+    overflow: hidden;
+}
+
+#label-description::before {
+    content: url(#full-flare);
+    display: block;
+    position: absolute;
+}
+
+.scroll-anchor {
+    /*scroll-margin-top: clamp(16px, 3svmin, 32px);*/
+    color:white;
+    z-index:0
+}
+
+.all-body {
+    z-index: 2;
+    background: rgb(23,26,33);
+    background: linear-gradient(0deg, rgba(23,26,33,1) 30%, rgba(27,40,56,1) 100%);
+}
+
+.hero-page-head::after {
+    content: url(#page-body-multisquares);
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 2;
+}
+
+#page-body-multisquares {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.mini-square-wrapper {
+    display: block;
+    position: relative;
+    top: 100%;
+    left: 50%;
+    height: 100%;
+    transform: translate(-50%, -100%);
+    z-index: 0;
+    overflow: visible;
+}
+
+.mini-square {
+    position: absolute;
+    width: 1vmin;
+    aspect-ratio: 1;
+    border: 1px #e6daf1 solid;
+    box-shadow: inset 0 0 .25vmin .25vmin rgba(102, 192, 244, 0.58);
+    left: 50%;
+    right: 50%;
+    bottom: -1vmin;
+    text-align: center;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.med-square {
+    position: absolute;
+    width: clamp(36px, 5vmin, 5vmin);
+    aspect-ratio: 1;
+    left: 50%;
+    right: 50%;
+    bottom: -1vmin;
+    text-align: center;
+    opacity: 1;
+    overflow: hidden;
+    border: none !important;
+    box-shadow: none !important;
+    filter: invert(94%) sepia(2%) saturate(2611%) hue-rotate(177deg) brightness(93%) contrast(88%);
+    transform: translate(0, -50vh);
+}
+
+.med-square.square-vite {
+    background: url("https://simpleicons.org/icons/vite.svg") !important;
+    filter: invert(35%) sepia(53%) saturate(2189%) hue-rotate(222deg) brightness(108%) contrast(104%);
+}
+
+.med-square.square-nodejs {
+    background: url("https://simpleicons.org/icons/nodedotjs.svg") !important;
+    filter: invert(49%) sepia(61%) saturate(770%) hue-rotate(73deg) brightness(86%) contrast(73%);
+}
+
+.med-square.square-php {
+    background: url("https://simpleicons.org/icons/php.svg") !important;
+    filter: invert(50%) sepia(12%) saturate(1392%) hue-rotate(198deg) brightness(96%) contrast(85%);
+}
+
+.med-square.square-typescript {
+    background: url("https://simpleicons.org/icons/typescript.svg") !important;
+    filter: invert(36%) sepia(100%) saturate(392%) hue-rotate(169deg) brightness(101%) contrast(93%);
+}
+
+.med-square.square-react {
+    background: url("https://simpleicons.org/icons/react.svg") !important;
+    filter: invert(80%) sepia(20%) saturate(3537%) hue-rotate(167deg) brightness(106%) contrast(97%);
+}
+
+.med-square.square-android {
+    background: url("https://simpleicons.org/icons/android.svg") !important;
+    filter: invert(66%) sepia(78%) saturate(369%) hue-rotate(92deg) brightness(94%) contrast(94%);
+}
+
+.med-square.square-java {
+    background: url("https://simpleicons.org/icons/oracle.svg") !important;
+    filter: invert(12%) sepia(64%) saturate(7497%) hue-rotate(357deg) brightness(93%) contrast(126%);
+}
+
+.med-square.square-mysql {
+    background: url("https://simpleicons.org/icons/mysql.svg") !important;
+    filter: invert(42%) sepia(36%) saturate(614%) hue-rotate(163deg) brightness(97%) contrast(93%);
+}
+
+.med-square.square-aws {
+    background: url("https://simpleicons.org/icons/amazonaws.svg") !important;
+    filter: invert(71%) sepia(30%) saturate(6398%) hue-rotate(359deg) brightness(101%) contrast(107%);
+}
+.med-square.square-git {
+    background: url("https://simpleicons.org/icons/git.svg") !important;
+    filter: invert(31%) sepia(91%) saturate(1287%) hue-rotate(343deg) brightness(105%) contrast(89%);
+}
+
+:first-child(of .med-square) {
+    position: absolute;
+}
+
+:nth-child(1 of .med-square) {
+    animation: float-tech-icon 5s alternate infinite linear;
+    left: calc(50% - 39% - clamp(18px, 2.5vmin, 2.5vmin));
+    bottom: calc(15% + 8%);
+}
+
+:nth-child(2 of .med-square) {
+    animation: float-tech-icon 8s alternate-reverse infinite linear;
+    left: calc(50% - 31% - clamp(18px, 2.5vmin, 2.5vmin));
+    bottom: calc(15% - 3%);
+}
+
+:nth-child(3 of .med-square) {
+    animation: float-tech-icon 6s alternate infinite linear;
+    left: calc(50% - 25% - clamp(18px, 2.5vmin, 2.5vmin));
+    bottom: calc(15% + 5%);
+}
+
+:nth-child(4 of .med-square) {
+    animation: float-tech-icon 9s alternate-reverse infinite linear;
+    left: calc(50% - 10% - clamp(18px, 2.5vmin, 2.5vmin));
+    bottom: calc(15% + 7%);
+}
+
+:nth-child(5 of .med-square) {
+    animation: float-tech-icon 7s alternate infinite linear;
+    left: calc(50% - 3% - clamp(18px, 2.5vmin, 2.5vmin));
+    bottom: calc(15% - 2%);
+}
+
+:nth-child(6 of .med-square) {
+    animation: float-tech-icon 5s alternate infinite linear;
+    left: calc(50% + 5% - clamp(18px, 2.5vmin, 2.5vmin));
+    bottom: calc(15% + 5%);
+}
+
+:nth-child(7 of .med-square) {
+    animation: float-tech-icon 6s alternate-reverse infinite linear;
+    left: calc(50% + 14% - clamp(18px, 2.5vmin, 2.5vmin));
+    bottom: calc(15% - 5%);
+}
+
+:nth-child(8 of .med-square) {
+    animation: float-tech-icon 8s alternate infinite linear;
+    left: calc(50% + 23% - clamp(18px, 2.5vmin, 2.5vmin));
+    bottom: calc(15%);
+}
+
+:nth-child(9 of .med-square) {
+    animation: float-tech-icon 9s alternate-reverse infinite linear;
+    left: calc(50% + 31% - clamp(18px, 2.5vmin, 2.5vmin));
+    bottom: calc(15% + 8%);
+}
+
+:nth-child(10 of .med-square) {
+    animation: float-tech-icon 7s alternate-reverse infinite linear;
+    left: calc(50% + 39% - clamp(18px, 2.5vmin, 2.5vmin));
+    bottom: calc(15% - 4%);
+}
+
+
+@keyframes float-tech-icon {
+    0% {
+        transform: translate(0vw, 0vh) rotate(5deg);
+        animation-timing-function: ease-in;
+    }
+    25% {
+        transform: translate(0vw, .5vh);
+        animation-timing-function: linear;
+    }
+    50% {
+        transform: translate(0vw, 1vh) rotate(-5deg);
+        animation-timing-function: linear;
+    }
+    75% {
+        transform: translate(0vw, 1.5vh);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translate(0vw, 2vh) rotate(5deg);
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes rot-tech-icon {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px), only screen and (max-height: 600px) and (orientation: landscape) {
+    .page-body {
+        margin: 0;
+    }
+
+    .site-logo {
+        padding: 1vmin 2vmin 3vmin;
+        transform: rotate(0);
+    }
+
+    .site-logo-wrapper {
+        display: block;
+        opacity: 0;
+        margin: 0;
+        height: fit-content;
+        width: clamp(48px, 1svmin, 3svmin);
+        aspect-ratio: 1;
+        animation: logo-fade-in 500ms forwards ease-out;
+        animation-delay: 250ms;
+        padding: 0 clamp(16px, 1svh, 24px) 0 0;
+    }
+
+    .site-logo[role=inactive] {
+        transform: rotate(0deg);
+        transition: transform 500ms ease-in-out;
+    }
+
+    .site-logo[role=active] {
+        transform: rotate(210deg);
+        transition: transform 750ms ease-in-out;
+        -moz-transition: transform 750ms ease-in-out;
+        -ms-transition: transform 750ms ease-in-out;
+        -o-transition: transform 750ms ease-in-out;
+        -webkit-transition: transform 750ms ease-in-out;
+    }
+
+
+    .site-link-wrapper-inner {
+        display: block;
+        margin: auto;
+        overflow: visible;
+    }
+
+    .header-links {
+        position: fixed;
+        padding: 0;
+        margin: 0;
+        height: fit-content;
+    }
+
+    .projects-body-top-label-small {
+        padding: clamp(8px, 1svw, 32px);
+    }
+
+    .projects-body-top-inner, .contact-name, .contact-name-first, .contact-name-last,
+    .contact-addresses, .contact-addresses-email, .contact-addresses-phone, .contact-message {
+        display: block;
+    }
+
+    .contact-form input {
+        padding: 4px;
+    }
+
+    .projects-display-inner {
+        display: inline-block;
+        margin: auto;
+        width: fit-content;
+        overflow: hidden;
+    }
+
+    .project-bouy-inner {
+        display: inline-block;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {} */
+
+/* Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {} */
+
+/* Large devices (laptops/desktops, 992px and up)
+@media only screen and (min-width: 992px) {} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up)
+@media only screen and (min-width: 1200px) {} */
+
+
+@keyframes mini-square-spin {
+    from {
+        transform: rotate(0);
+        -ms-transform: rotate(0);
+    }
+    to {
+        transform: rotate(-900deg);
+        -ms-transform: rotate(-900deg);
+    }
+}
+
+@keyframes enter-intro {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes logo-fade-in {
+    0% {
+        transform: rotate(-30deg);
+        opacity: 0;
+    }
+    50% {
+        transform: rotate(0);
+        opacity: 50;
+    }
+    100% {
+        transform: rotate(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes square-gravity {
+    0% {
+        animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1)
+    }
+    25% {
+        transform: translate(0, -5svh);
+        animation-timing-function: cubic-bezier(0.33333, 0, 0.66667, 0.33333);
+    }
+    100% {
+        transform: translate(0, 200svh);
+    }
+}
+
+@keyframes spin-square {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes shrink-grow-1 {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes shrink-grow-2 {
+    0% {
+        opacity: .5;
+        width: 80vmax;
+    }
+    100% {
+        opacity: .25;
+        width: 70vmax;
+    }
+}
+
+@keyframes shrink-grow-3 {
+    0% {
+        opacity: 1;
+        width: 90vmin;
+    }
+    100% {
+        opacity: 0;
+        width: 80vmin;
+    }
+}
+
+@keyframes shrink-grow-4 {
+    0% {
+        opacity: 1;
+        width: 100vmin;
+    }
+    100% {
+        opacity: .25;
+        width: 90vmin;
+    }
+}
+
+@keyframes shrink-grow-5 {
+    0% {
+        opacity: 1;
+        width: 125vmin;
+    }
+    100% {
+        opacity: 0;
+        width: 105vmin;
+    }
+}
+
+@keyframes enter-hero-link {
+    0%{
+        transform: translateX(-50svw);
+        opacity: 0;
+        pointer-events: none;
+    }
+    .99% {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: none;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto
+    }
+}

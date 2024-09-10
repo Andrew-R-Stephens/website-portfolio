@@ -3,15 +3,15 @@
     "entries" : [
       {
         "type": "div",
-        "content" : "I'm a <label style=color:var(--importantColor)>Full-Stack Web Developer</label> / <label style=color:var(--importantColor)>Android Engineer."
+        "content" : "I'm a <label style=color:var(--importantColor)>Full-Stack Developer</label> / <label style=color:var(--importantColor)>Android Engineer."
       },
       {
         "type": "div",
-        "content" : "Awarded <label style=color:var(--quaternaryColor)>B.S. in Computer and Information Science</label> from SUNY College at Old Westbury."
+        "content" : "Awarded <label style=color:var(--quaternaryColor)>B.S. in Computer and Information Science</label> from SUNY Old Westbury, with <label style=color:var(--importantColor)>Dean's List</label> honors."
       },
       {
         "type": "div",
-        "content" : "I have a deep <label style=color:var(--importantColor)>passion</label> <label style=color:var(--quaternaryColor)>for Software Engineering</label>."
+        "content" : "I have a deep <label style=color:var(--importantColor)>passion</label> <label style=color:var(--quaternaryColor)>for Software Engineering</label>. Every day is another opportunity to learn something new."
       },
       {
         "type": "div",
@@ -19,7 +19,7 @@
       },
       {
         "type": "div",
-        "content" : "Knowledgeable and practiced across a wide range of technologies."
+        "content" : "Knowledgeable and practiced across a wide range of both old and recent technologies."
       },
       {
         "type": "div",

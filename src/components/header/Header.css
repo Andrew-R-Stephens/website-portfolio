@@ -1,0 +1,16 @@
+
+.header-container {
+    display: inline-flex;
+    margin: auto;
+}
+
+.header-links {
+    position: absolute;
+    margin: 1.6vmin;
+    z-index: 3;
+}
+
+.header-input {
+    display: flex;
+    padding-top: clamp(0px, 5svh, 64px);
+}
